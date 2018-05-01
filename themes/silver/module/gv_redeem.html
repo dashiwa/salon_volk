@@ -1,0 +1,19 @@
+{config_load file="$language/lang.conf" section="gv_redeem"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_feat">{#heading_gvredeem#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+  {if $error eq 'true'}
+  <div class="error">{#text_invalid_gv#}</div>
+  {else}
+  <div class="info">{#text_valid_gva#} {$coupon_amount} {#text_valid_gvb#}</div>
+  {/if}
+<div class="mod_space">
+ <div class="cont_tab">
+  <div class="mod_row ">
+    <div class="mod_tdright"><span class="imgs right">{$LINK_DEFAULT}</span></div>
+  </div>
+ </div>
+</div>
+</div>

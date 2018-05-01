@@ -1,0 +1,210 @@
+.mod_news{
+	padding: 0px 0px 10px 0px;
+}
+
+.mod_newstitle, .mod_time{
+	font-size: 12px;
+	
+}
+
+.a_more{
+	background: url(../images/41.png) no-repeat left;
+	padding-left: 12px;
+}
+.mod_newscontent{
+	padding-left: 15px;
+}
+.mod_corner, .navigation{
+	padding: 10px 10px 10px 10px;
+}
+
+
+.navigation{
+	margin: 0px 5px 0px 5px;
+	background-color: #E1E1E1;
+}
+.cooment_info{
+	border: #E1E1E1;
+	background: #eae9e9;
+	color: #50B3E3;
+}
+.info{
+	border: #150B3E3; color: #150B3E3;
+	background: #FFFAD2 ;
+	font-size: 110%;
+	
+}
+div.error{
+	border: #ff0d0d; color: #ff0d0d;
+	background: #ffcaca url(../images/error.png) no-repeat 10px 50%;
+}
+div.error, .info{
+	margin: 10px 5px 10px 5px;	
+} 
+.addres{
+	border: #004a01;
+	color: #004a01;
+	background: #eaf2fb url(../images/home.png) no-repeat 15px 15px;
+	width: 180px;
+}
+.adrbil{
+	border: #e4e4e4;
+	color: #000000;
+	background: #eaf2fb url(../images/LorryGreen-icon.png) no-repeat 15px 15px;
+	width: 180px;
+}
+.addres, div.error, .adrbil, .cooment_info{
+	border: 1px solid;
+}
+.shipping{
+	background: url(../images/LorryGreen-icon.png) no-repeat left;
+	padding: 2px 2px 2px 28px;
+}
+.payment{
+	background: url(../images/creditcard.png) no-repeat left;
+	padding: 2px 2px 2px 28px;
+}
+.comments{
+	background-image: url(../images/chat.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 2px 2px 2px 28px;
+}
+.success{
+	background: url(../images/box-3-icon.png) no-repeat 50% 50%;
+	width: 130px;
+	height: 130px;
+}
+
+.mod_moreinfo, div.error, .info, .addres, .adrbil, .cooment_info{
+	padding: 10px 10px 10px 10px;
+	text-align: left;
+} 
+.mod_artcontent{
+	font-size: 14px;
+	font: Tahoma;
+}
+.mod_artsearch{
+	padding: 5px 10px 5px 10px;
+	border: 1px solid #E1E1E1;
+	background: #ffffbb;
+}
+.mod_space, .mod_artsearch, .imgcat{
+	margin: 5px 0px 5px 5px;	
+}
+.mod_td1, .mod_td2, .mod_td3, .mod_tdb, .mod_tdright, .mod_tdbuy{
+	padding: 4px 4px 4px 4px;
+	vertical-align: middle;
+	}
+.mod_td1, .mod_tdb{
+	width: 200px;
+	vertical-align: top;
+}
+.mod_tdb, .mod_th{
+	font-weight: bold;
+}
+.mod_td2{
+
+	vertical-align: top;
+	text-align: left;
+}
+.mod_tdbuy{
+	width: 98px;
+	vertical-align: bottom;
+}
+.mod_td3{
+	width: 50%;
+	vertical-align: top;
+}
+.mod_th{
+	font-size: 120%;
+	color: #333333;
+}
+.mod_th,.mod_tdright{
+	
+}
+.mod_tdright{
+	text-align: right;
+}
+.mod_table{
+	border-collapse: collapse;
+	border: 1px solid #E1E1E1;
+}
+.gift{
+	border: 1px solid #ff0d0d;
+	background: #ffcaca url(../images/gift-icon.png) no-repeat 10px 50%;
+	padding: 10px 10px 10px 70px;
+	margin: 20px 20px 20px 20px;
+}
+.mod_arttime, .mod_time{
+	background-image: url(../images/cal.png);
+}
+.mod_artvived{
+	background-image: url(../images/viv.png);
+}
+.mod_artautor{
+	background-image: url(../images/autor.png);
+}
+.mod_arturl{
+	background-image: url(../images/url.png);
+}
+.mod_artcat{
+	background-image: url(../images/cat.png);
+}
+.mod_arttitlist{
+	background-image: url(../images/tit.png);
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.mod_artnews{
+	background-image: url(../images/newslet.png);
+}
+.mod_adrb{
+	background-image: url(../images/adrb.png);
+}
+.mod_acc{
+	background-image: url(../images/acn.png);
+}
+.mod_pas{
+	background-image: url(../images/pas.png);
+}
+.mod_artrat{
+	background-image: url(../images/02.png);
+}
+.mod_tax{
+	background-image: url(../images/calculator.png);
+}
+.mod_info{
+  background-image: url(../images/infoicon.png) 
+}
+.mod_manuf{
+	background-image: url(../images/manuf.png);
+}
+.mod_disc{
+	background-image: url(../images/piggy.png);
+}
+.mod_ship{
+	background-image: url(../images/car.png);
+}
+.mod_print{
+	background-image: url(../images/print.png);
+}
+.mod_qtn{
+	background-image: url(../images/help.png);
+}
+.mod_qtn, .mod_print, .mod_ship, .mod_disc, .mod_manuf, .mod_info, .mod_time, .mod_tax, .mod_artrat, .mod_pas, .mod_acc, .mod_arturl, .mod_artautor, .mod_artvived, .mod_arttime, .mod_artcat, .mod_arttitlist, .mod_artnews, .mod_adrb{
+	background-position: left;
+	background-repeat: no-repeat;
+	padding: 2px 2px 2px 20px;
+}
+.ui-progressbar { height: 22px; text-align: left; }
+.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
+.ui-progressbar-value { background-image: url(../images/pbar-ani.gif); }
+
+
+.statusbar{
+	padding: 10px 10px 10px 10px;
+}
+.ui-widget-content { border: 1px solid #E1E1E1;}
+.ui-widget-header { border: 1px solid #E1E1E1; }

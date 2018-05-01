@@ -1,0 +1,48 @@
+{config_load file="$language/lang.conf" section="address_book"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_adres">{#heading_address#}</div>
+</td><td class="mod_redright"></td></tr></table>
+{if $error!=''}
+<div class="error">{$error}</div>
+{/if}
+
+{$FORM_ACTION}
+<div class="mod_space">
+<div class="h2">{#title_standard#}</div>
+<div class="hrspace"></div>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><div class="mod_space">
+    <b>{#title_standard#}</b><br />
+    {#text_standard#}
+    </div></td>
+    <td class="mod_td2"><div class="addres">{$ADDRESS_DEFAULT}</div></td>
+  </tr>
+</table>
+<br />
+<div class="h2">{#title_addresses#}</div>
+<div class="hrspace"></div>
+</div>
+{foreach name=aussen item=addresses from=$addresses_data}
+<div class="mod_corner mod_space">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="mod_cel"><b>{$addresses.NAME}</b>{if $addresses.PRIMARY=='1'} <em class="red">({#title_standard#})</em> {/if}<br />
+    {$addresses.ADDRESS}</td><td class="mod_td1"><span class="right imgs">{$addresses.BUTTON_EDIT}</span> <span class="right imgs"> {$addresses.BUTTON_DELETE}</span></td>
+  </tr>
+</table>
+</div>
+{/foreach}
+<div class="mod_space">
+ <table width="100%" cellpadding="0" cellspacing="0">
+   <tr>
+     <td><span class="imgs">{$BUTTON_BACK}</span></td>
+     <td><span class="right imgs">{$BUTTON_NEW}</span></td>
+   </tr>
+ </table>
+</div>
+
+<div class="info">{$ADDRESS_COUNT}</div>
+</div>

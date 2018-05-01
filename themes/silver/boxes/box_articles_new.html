@@ -1,0 +1,20 @@
+{config_load file="$language/lang.conf" section="boxes"}
+<div class="block"> 
+          <div class="greenblock_header"><h3>{#heading_articles_new#}</h3></div> 
+		  <div class="block_center"> 
+			 <div class="leftmenu"> 
+				<ul class="list">
+<table width="95%"  border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td class="blockTitle">
+{foreach name=aussen item=articles from=$articles_content}
+<a href="{$articles.ARTICLES_URL}">{$articles.ARTICLES_NAME}</a><br /><br />
+ {/foreach}  
+          </td>
+        </tr>
+    </table> 
+		       </ul>
+			 </div> 
+		  </div> 
+		  <div class="block_bot"></div> 
+</div>

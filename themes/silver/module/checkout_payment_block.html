@@ -1,0 +1,34 @@
+
+<table class="mod_table" bordercolor="#dddddd" border="1" width="100%" cellspacing="1" cellpadding="4">
+
+ {foreach name=aussen item=module_data from=$module_content}
+                        <tr class="tr">
+		                    <td width="1">{$module_data.selection}</td>
+		                    <td align="left"><b>{$module_data.module}</b></td>
+                            <td width="100" align="right"><b>{$module_data.module_cost}</b></td>
+		                </tr>
+		{if $module_data.description}
+		                <tr>
+			                <td colspan="3">{$module_data.description}</td>
+			            </tr>
+		{/if}
+		{if $module_data.error} 
+			            <tr>
+			                <td colspan="3">{$module_data.error}</td>
+			            </tr>
+		{else} 
+		                <tr>
+			                <td colspan="3">
+        <table border="0" cellspacing="0" cellpadding="2">
+        {foreach name=aussen item=method_data from=$module_data.fields}
+        		        <tr>
+				            <td>{$method_data.title}</td>
+				            <td>{$method_data.field}</td>
+				        </tr>
+        {/foreach}
+        </table>
+                            </td>
+		                </tr>
+        {/if}
+	    {/foreach}
+ </table>

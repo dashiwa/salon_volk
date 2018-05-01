@@ -1,0 +1,63 @@
+{config_load file="$language/lang.conf" section="checkout_payment_address"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_adres">{#heading_address#}</div>
+</td><td class="mod_redright"></td></tr></table>
+{$FORM_ACTION}
+{if $error!=''}
+<div class="error">{$error}</div>
+{/if}
+{if $BILLING_ADDRESS=='true'}
+{#title_current_address#}
+{#text_current_address#}
+{#title_current_address#}
+{$ADDRESS_LABEL}
+{/if}
+{if $BLOCK_ADDRESS}
+<div class="mod_space">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><div class="mod_space">
+    <div class="h2">{#title_old_addresses#}</div><div class="hrspace"></div>{#text_old_addresses#}
+    </div></td>
+    <td class="mod_td2"><div class="addres">{$BLOCK_ADDRESS}</div></td>
+  </tr>
+</table>
+</div>
+{else}
+{if $MODULE_new_address}
+{$MODULE_new_address}
+{/if}
+{/if}
+<div class="mod_space">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="mod_cel"><b>{#title_continue#}</b><div class="hrspace"></div>{#text_continue#}</td>
+    <td class="mod_tdright"><span class="right">{$BUTTON_CONTINUE}</span></td>
+  </tr>
+</table>
+</div>
+<div class="statusbar">
+<div class="h2">Прогрес</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+          <td width="25%"><center>1. {#text_shipping_info#}</center></td>
+          <td width="25%"><center><b>2. {#text_payment_info#}</b></center></td>
+          <td width="25%"><center>3. {#text_confirm#}</center></td>
+          <td width="25%"><center>4. {#text_finished#}</center></td>
+          </tr>
+</table>
+<div id="progressbar"></div>
+</div>
+{literal}
+	<script type="text/javascript">
+	$(function() {
+		$("#progressbar").progressbar({
+			value: 50
+		});
+	});
+</script>
+{/literal}
+{$FORM_END}
+</div>

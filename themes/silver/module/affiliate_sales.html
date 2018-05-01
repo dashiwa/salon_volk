@@ -1,0 +1,59 @@
+{config_load file="$language/affiliate.conf" section="affiliate_sales"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_affil">{#heading_title#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+<div class="info">{#text_affiliate_header#}&nbsp;&nbsp;{$affiliate_sales_split_numbers}</div>
+  {$FORM_ACTION}
+<table width="100%" cellpadding="10" cellspacing="0">
+  <tr>
+    <td class="mod_tdb">{#text_affiliate_period#}</td>
+    <td class="mod_td2">{$period_selector}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_affiliate_status#}</td>
+    <td class="mod_td2">{$status_selector}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_affiliate_level#}</td>
+    <td class="mod_td2">{$level_selector}</td>
+  </tr>
+</table>
+</form>
+
+</div>
+</div>
+<div class="mod_space">
+    <table class="mod_table" bordercolor="#dddddd" border="1" width="100%" cellspacing="1" cellpadding="4">
+      <tr>
+        <td align="center"><b>{#table_heading_date#}</b></td>
+        <td align="right"><b>{#table_heading_value#}</b></td>
+        <td align="right"><b>{#table_heading_percentage#}</b></td>
+        <td align="right"><b>{#table_heading_level#}</b></td>
+        <td align="right"><b>{#table_heading_sales#}</b></td>
+        <td align="right"><b>{#table_heading_status#}</b></td>
+      </tr>
+      {if $affiliate_sales_table neq ''}
+        {$affiliate_sales_table}
+      {else}
+        <tr><td colspan="6"><div class="info">{#text_no_sales#}</div></td></tr>
+      {/if}
+      <tr>
+        <td colspan="6">
+        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+		  <tr>
+	        <td>{$affiliate_sales_count}</td>
+	        <td>{$affiliate_sales_links}</td>
+	      </tr>
+	    </table>
+        </td>
+	  </tr>
+	  <tr>
+        <td colspan="6">{#text_information_sales_total#}&nbsp;&nbsp;{$affiliate_sales_total}&nbsp;&nbsp;{#text_information_sales_total2#}</td>
+      </tr>
+    </table>
+</div>
+</div>

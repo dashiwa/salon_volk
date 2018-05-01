@@ -1,0 +1,26 @@
+{config_load file="$language/lang.conf" section="articles"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_article">{$ARTICLE_NAME}</div>
+</td><td class="mod_blueright"></td></tr></table>
+{if $no_article=='true'}
+<div class="error">{#text_no_article#} </div>
+{else}
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+{if $ARTICLE_DESCRIPTION}<div class="mod_artcontent">{$ARTICLE_DESCRIPTION}</div>{/if}
+
+<div class="mod_moreinfo">
+{if $ARTICLE_DATE}<div class="mod_arttime">{#text_date#} {$ARTICLE_DATE}</div>{/if}
+{if $ARTICLE_VIEWED}<div class="mod_artvived">{#text_viewed#} {$ARTICLE_VIEWED}</div>{/if}
+{if $AUTHOR_NAME}<div class="mod_artautor">{#text_author#} <a href="{$AUTHOR_LINK}">{$AUTHOR_NAME}</a></div>{/if}
+{if $ARTICLE_URL}<div class="mod_arturl">{#text_url#} <a href="http://{$ARTICLE_URL}" target="_blank">http://{$ARTICLE_URL}</a></div>{/if}
+</div>
+</div></div>
+
+{if $MODULE_articles_xsell != ''}
+{$MODULE_articles_xsell}
+{/if}
+{/if}
+</div>

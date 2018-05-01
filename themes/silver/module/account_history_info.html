@@ -1,0 +1,90 @@
+{config_load file="$language/lang.conf" section="account_history_info"}
+{config_load file="$language/lang.conf" section="print_order"}
+{config_load file="$language/lang.conf" section="product_info"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_acnt">{#heading_history_info#}</div>
+</td><td class="mod_redright"></td></tr></table>
+<div class="h2">{#text_oid#}{$ORDER_NUMBER}(<span class="red">{$ORDER_STATUS}</span>)</div>
+<div class="mod_moreinfo">
+  <div class="mod_arttime">{#text_date#} {$ORDER_DATE}</div>
+</div>
+<div class="mod_space"><div class="mod_corner">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left"><b>{#text_shipping_address#}</b><div class="brspace"></div><div class="adrbil">{$DELIVERY_LABEL}</div></td>
+    <td align="right">{if $BILLING_LABEL}<b>{#text_payment_address#}</b><div class="brspace"></div><div class="addres">{$BILLING_LABEL}</div>{/if}</td>
+  </tr>
+</table>
+</div></div>
+<div class="mod_space"><div class="shipping"><b>{#text_shipping_method#}</b>&nbsp;{$SHIPPING_METHOD}</div></div>
+{if $PAYMENT_METHOD!=''}
+<div class="mod_space"><div class="payment"><b>{#text_payment_method#}</b>&nbsp;{$PAYMENT_METHOD}</div></div>
+{/if}
+{if $ORDER_COMMENTS!=''}
+<div class="mod_space"><div class="comments"><b>{#text_comments#}</b>&nbsp;{$ORDER_COMMENTS}</div></div>
+{/if}
+{if $PAYMENT_INFORMATION!=''}
+<div class="brspace"></div>
+<div class="mod_space">
+ <div class="h2">{#text_payment_info#}</div>
+<div class="mod_corner">
+  {$PAYMENT_INFORMATION}
+</div></div>
+{/if}
+<div class="brspace"></div>
+<div class="mod_space">
+ <div class="h2">{#title_history#}</div>
+<div class="mod_corner">
+  {$HISTORY_BLOCK}
+</div></div>
+<div class="mod_space">
+ <div class="h2">{#text_products#}</div>
+   <div class="mod_corner">
+	<table class="mod_table" bordercolor="#dddddd" border="1" width="100%" cellspacing="1" cellpadding="4">
+        <tr> 
+          <td align="center"><b>{#head_products#}</b></td>
+          <td align="center"><b>{#head_artnr#}</b></td>
+          <td align="right"><b>{#head_single_price#}</b></td>
+          <td align="center"><b>{#head_units#}</b></td>
+          <td align="right"><b>{#head_price#}</b></td>
+        </tr>
+        {foreach name=aussen item=order_values from=$order_data} 
+        <tr> 
+          <td align="left">
+          {$order_values.PRODUCTS_NAME}
+          <i>{$order_values.PRODUCTS_ATTRIBUTES}</i>
+          {if $order_values.PRODUCTS_SHIPPING_TIME neq ''}<br />
+            {#text_shippingtime#} {$order_values.PRODUCTS_SHIPPING_TIME}{/if}
+          </td>
+          <td align="center">{$order_values.PRODUCTS_MODEL} {$order_values.PRODUCTS_ATTRIBUTES_MODEL}</td>
+          <td align="right">{$order_values.PRODUCTS_SINGLE_PRICE}</td>
+          <td align="center">{$order_values.PRODUCTS_QTY}</td>
+          <td align="right">{$order_values.PRODUCTS_PRICE}</td>
+        </tr>
+        {/foreach}
+        {foreach name=aussen item=order_total_values from=$order_total}
+        <tr>
+         <td colspan="4" align="right">{$order_total_values.TITLE}</td><td align="right">{$order_total_values.TEXT}</td>
+        </tr>
+        {/foreach}
+    </table>
+  </div>
+</div>
+{if $downloads_content neq ''}
+  {$downloads_content}
+{/if}
+<div class="mod_space">
+ <div class="cont_tab">
+  <div class="mod_row ">
+    <div class="mod_cel">
+    <b>{#title_print#}</b><div class="hrspace"></div>
+    {#text_print#}<br />
+    <span class="imgs">{$BUTTON_PRINT}</span>&nbsp;<span class="imgs">{$BUTTON_SCHET_PRINT}</span>&nbsp;<span class="imgs">{$BUTTON_KVITANCIA_PRINT}</span>
+    </div>
+    <div class="mod_tdright"><span class="right imgs">{$BUTTON_BACK}</span></div>
+  </div>
+ </div>
+</div>
+</div>

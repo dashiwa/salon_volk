@@ -1,0 +1,159 @@
+{config_load file="$language/lang.conf" section="index"}
+{config_load file="$language/lang.conf" section="boxes"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_cat">{$CATEGORIES_NAME}</div>
+</td><td class="mod_blueright"></td></tr></table>
+<div class="h1">
+  <table width="100%" border="5">
+    <tr>
+      <td width="3%">&nbsp;</td>
+      <td width="97%"><strong>{$CATEGORIES_HEADING_TITLE}</strong></td>
+    </tr>
+  </table>
+</div>
+
+
+{if $MANUFACTURERS_DESCRIPTION}<br />
+<table width="100%" border="5" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="main" align="left">
+	{$MANUFACTURERS_DESCRIPTION}
+    </td>
+  </tr>
+</table>
+<br />
+{/if}
+{if $MANUFACTURER_SORT}<br />
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+  <td class="main" align="left">
+	 <div class="info">Товары производителя: {$MANUFACTURER_SORT}</div>
+    </td>
+  </tr>
+</table>
+<br />
+
+{/if}
+{if $CATEGORIES_NAME}
+
+<table width="100%" cellpadding="5" cellspacing="0" border="1">
+    <tr>
+<td >
+</div>
+                                                             <div class="1cat-prod-page">
+				<form id="1prod-soft-menu">
+				        <input type="hidden" name="select value" />
+				       <select name="sel-pages" size="1" onchange="top.location.href = this.options[this.selectedIndex].value;">
+				            <option selected value="#">{#text_sort#}</option>
+				            <option value="{$LINK_sort_name_asc}">{#text_sort_name_asc#}</option>
+				            <option value="{$LINK_sort_name_desc}">{#text_sort_name_desc#}</option>
+				            <option value="{$LINK_sort_price_asc}">{#text_sort_price_asc#}</option>
+				            <option value="{$LINK_sort_price_desc}">{#text_sort_price_desc#}</option>						
+				      </select>
+				</form>
+		                </div>
+</td >
+ <td align="right" >
+                                                           <div class="cat-prod-page">
+				<form id="prod-soft-menu">
+				        <input type="hidden" name="select value" />
+				       <select name="sel-pages" size="1" onchange="top.location.href = this.options[this.selectedIndex].value;">
+				            <option selected value="#">{#text_products_per_page#}</option>
+				            <option value="{$LINK_PAGE}10">10</option>
+				            <option value="{$LINK_PAGE}20">20</option>
+				            <option value="{$LINK_PAGE}50">50</option>
+				            <option value="{$LINK_PAGE}100">100</option>						
+				      </select>
+				</form>
+		                </div>
+</td >
+    </tr>
+</table>{/if}
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+  {foreach name=aussen item=module_data from=$module_content}
+  {php} $col++;
+  {/php}
+<td class="mod_cel5">
+<div class="mod_corner" id="myBox">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="product_name" colspan="2"><a href="{$module_data.PRODUCTS_LINK}"><strong>{$module_data.PRODUCTS_NAME}</strong></a></td>
+  </tr>
+  <tr>
+    <td height="157" class="product_image"><p></p>
+      <div align="center"><span class="product_price"><br />
+      </span></div>
+      <p>{if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" title="{$module_data.PRODUCTS_NAME}" /></a>{/if}</p></td>
+    
+  </tr>
+  <tr>
+    <td colspan="2">
+   <div class="product_price"> 
+     <div align="center">
+       <table width="100%" border="5">
+         <tr>
+           <td width="62%"><table width="100%" cellpadding="0" cellspacing="0" class="">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+
+  <div align="center">
+    <table width="100%" border="5">
+      <tr>
+        <td><img src="{$tpl_path}img/pricebtn.png" width="33" height="36" /></td>
+        <td><div align="left">{$module_data.PRODUCTS_PRICE}{if $module_data.PRODUCTS_VPE}
+          {$module_data.PRODUCTS_VPE}{/if} {if $module_data.PRODUCTS_SHIPPING_LINK}
+          {$module_data.PRODUCTS_SHIPPING_LINK}{/if} </div></td>
+        <td>{$module_data.PRODUCTS_BUTTON_BUY_NOW_NEW}</td>
+      </tr>
+    </table>
+  </div></td><td class="mod_blueright"></td></tr></table></td>
+         
+         </tr>
+       </table>
+     </div>
+   </div>
+   <div align="center">{if $module_data.PRODUCTS_TAX_INFO}</div>
+   <div class="product_vpe">{$module_data.PRODUCTS_TAX_INFO}</div>{/if}    </td>
+  </tr>
+</table>
+</div>
+</td>
+  {php}
+  if ($col>=2) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}
+    </tr>
+  </table>
+
+
+<div class="brspace"></div>
+<div class="navigation">
+<div class="cont_tab ">
+  <div class="mod_row">
+<div class="navbar">
+  <div align="center">{$NAVIGATION}</div>
+</div><div class="navbar1">
+  <div align="center">{$NAVIGATION_PAGES}</div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+{if $CATEGORIES_DESCRIPTION}
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+  <table width="100%" border="0">
+  <tr>
+    <td><img align="left" src="{$CATEGORIES_IMAGE}" alt="{$CATEGORIES_NAME}" />{if $CATEGORIES_IMAGE}{/if}
+{$CATEGORIES_DESCRIPTION} </td>
+  </tr>
+</table>
+</div></div>
+{/if}
+<div class="brspace"></div>

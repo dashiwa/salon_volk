@@ -1,0 +1,67 @@
+{config_load file="$language/lang.conf" section="checkout_success"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_feat">{#heading_success#}</div>
+</td><td class="mod_redright"></td></tr></table>
+{$FORM_ACTION}
+<div class="mod_space">
+    <div class="h2">{#text_success#}</div>
+    <div class="brspace"></div><div class="brspace"></div>
+    <div class="mod_moreinfo">
+    <b>{#title_printorder#}</b><div class="hrspace"></div>{#text_printorder#}<br /><br />
+    {if $BUTTON_PRINT}<span class="imgs"><a>{$BUTTON_PRINT}</a></span>{/if}
+    {if $BUTTON_SCHET_PRINT}<span class="imgs"><a>{$BUTTON_SCHET_PRINT}</a></span>{/if}
+    {if $BUTTON_KVITANCIA_PRINT}<span class="imgs"><a>{$BUTTON_KVITANCIA_PRINT}</a></span>{/if}
+    </div>
+    <br />
+    <div class="info">{#text_thankyou#}</div>
+</div>
+<div class="mod_space">
+ <div class="cont_tab">
+  <div class="mod_row ">
+    <div class="mod_cel">
+    {if $GV_SEND_LINK}
+	<!--GV Code Start-->
+	{#gv_has_vouchera#} {$GV_SEND_LINK} {#gv_has_voucherb#}
+	<!--GV Code End-->
+	{/if}
+    </div>
+    <div class="mod_tdright"><span class="right imgs">{$BUTTON_CONTINUE}</span></div>
+  </div>
+ </div>
+</div>
+
+<!-- Google Conversion-tracking start !-->
+{if $google_tracking eq 'true'}
+{$tracking_code}
+{/if}
+<!-- Google Conversion-tracking end !-->
+{if $downloads_content neq ''}
+  {$downloads_content}
+{/if}
+
+<div class="statusbar">
+<div class="h2">Прогрес</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+          <td width="25%"><center>1. {#text_shipping_info#}</center></td>
+          <td width="25%"><center>2. {#text_payment_info#}</center></td>
+          <td width="25%"><center>3. {#text_confirm#}</center></td>
+          <td width="25%"><center><b>4. {#text_finished#}</b></center></td>
+          </tr>
+</table>
+<div id="progressbar"></div>
+</div>
+{literal}
+	<script type="text/javascript">
+	$(function() {
+		$("#progressbar").progressbar({
+			value: 100
+		});
+	});
+</script>
+{/literal}
+
+{$FORM_END}
+</div>

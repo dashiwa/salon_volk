@@ -1,0 +1,93 @@
+{config_load file="$language/lang.conf" section="account_edit"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_acnt">{#heading_account#}</div>
+</td><td class="mod_redright"></td></tr></table>
+{if $error!=''}
+<div class="error">{$error}</div>
+{/if}
+{$FORM_ACTION}
+<div class="mod_space">
+<div class="mod_corner">
+
+
+
+ <div class="cont_tab">
+  <div class="mod_row"><div class="mod_th">{#title_personal#}</div><div class="mod_tdright red">{#text_must#}</div></div>
+  {if $csID}
+  <div class="mod_row"><div class="mod_tdb">{#csID#}</div>
+                       <div class="mod_td2"><b>{$csID}</b></div>
+  </div>
+  {/if}
+  {if $gender=='1'}
+  <div class="mod_row"><div class="mod_tdb"><label for="gender" title="{$ENTRY_GENDER_ERROR}">{#text_gender#}</label></div>
+                       <div class="mod_td2">{$INPUT_MALE}<br />{$INPUT_FEMALE}</div>
+  </div>
+  {/if}
+  <div class="mod_row"><div class="mod_tdb"><label for="firstname" title="{$ENTRY_FIRST_NAME_ERROR}">{#text_firstname#}</label></div>
+                       <div class="mod_td2">{$INPUT_FIRSTNAME}</div>
+  </div>
+  {if $secondname=='1'}
+  <div class="mod_row"><div class="mod_tdb">{#text_secondname#}</div>
+                       <div class="mod_td2">{$INPUT_SECONDNAME}</div>
+  </div>
+  {/if}
+  <div class="mod_row"><div class="mod_tdb"><label for="lastname" title="{$ENTRY_LAST_NAME_ERROR}">{#text_lastname#}</label></div>
+                       <div class="mod_td2">{$INPUT_LASTNAME}</div>
+  </div>
+  {if $birthdate=='1'}
+  <div class="mod_row"><div class="mod_tdb"><label for="dob" title="{$ENTRY_DATE_OF_BIRTH_ERROR}">{#text_birthdate#}</label></div>
+                       <div class="mod_td2">{$INPUT_DOB}</div>
+  </div>
+  {/if}
+  <div class="mod_row"><div class="mod_tdb"><label for="email" title="{$ENTRY_EMAIL_ADDRESS_ERROR}">{#text_email#}</label></div>
+                       <div class="mod_td2">{$INPUT_EMAIL}</div>
+  </div>
+ </div>
+ <div class="cont_tab">
+  {if $vat=='1'}
+  <div class="mod_row"><div class="mod_tdb">{#text_ustid#}</div>
+                       <div class="mod_td2">{$INPUT_VAT}</div>
+  </div>
+  {/if}
+ </div>
+ <div class="cont_tab">
+  <div class="mod_row"><div class="mod_th">{#title_contact#}</div>
+  </div>
+ </div>
+ <div class="cont_tab">
+ {if $telephone=='1'}
+  <div class="mod_row"><div class="mod_tdb"><label for="telephone" title="{$ENTRY_TELEPHONE_NUMBER_ERROR}">{#text_tel#}</label></div>
+                       <div class="mod_td2">{$INPUT_TEL}</div>
+  </div>
+  {if $fax=='1'}
+  <div class="mod_row"><div class="mod_tdb">{#text_fax#}</div>
+                       <div class="mod_td2">{$INPUT_FAX}</div>
+  </div>
+  {/if}
+  {/if}
+  {if $INPUT_CUSTOMERS_EXTRA_FIELDS}
+  {foreach item=customers_extra_filelds from=$INPUT_CUSTOMERS_EXTRA_FIELDS}
+  <div class="mod_row"><div class="mod_tdb">{$customers_extra_filelds.NAME}:</div>
+                       <div class="mod_td2">{$customers_extra_filelds.VALUE}</div>
+  </div>
+  {/foreach}
+  {/if}
+ </div>
+
+
+
+
+</div>
+</div>
+<div class="mod_space">
+ <div class="cont_tab">
+  <div class="mod_row ">
+    <div class="mod_cel"><span class="imgs">{$BUTTON_BACK}</span></div>
+    <div class="mod_tdright"><span class="right">{$BUTTON_SUBMIT}</span></div>
+  </div>
+ </div>
+</div>
+</div>
+{$FORM_END}

@@ -1,0 +1,37 @@
+{config_load file="$language/lang.conf" section="account_history"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_acnt">{#heading_history#}</div>
+</td><td class="mod_redright"></td></tr></table>
+<div class="cont_tab">
+{foreach name=aussen item=order_data from=$order_content}
+<div class="mod_row">
+<div class="mod_moreinfo">
+<div class="mod_arttitlist">{#text_oid#} {$order_data.ORDER_ID}</div>
+<div class="mod_moreinfo">
+<div class="mod_arttime">{#text_date#} {$order_data.ORDER_DATE}</div>
+<div class="mod_artcat">{#text_articles#} {$order_data.ORDER_PRODUCTS}</div>
+<div class="mod_artautor">{#text_total#} {$order_data.ORDER_TOTAL}</div>
+<div class="mod_arturl">{#text_status#} <span class="red">{$order_data.ORDER_STATUS}</span></div>
+<span class="imgs">{$order_data.ORDER_BUTTON}</span>
+</div></div></div>
+<div class="hrspace"></div>
+{/foreach}
+</div>
+<div class="brspace"></div><div class="brspace"></div>
+<div class="navigation">
+<div class="cont_tab ">
+  <div class="mod_row">
+<div class="navbar">{$SPLIT_BAR}</div><div class="navbar1">{$SPLIT_BAR_PAGES}</div>
+  </div>
+</div>
+</div>
+<div class="mod_space">
+ <div class="cont_tab">
+  <div class="mod_row ">
+    <div class="mod_tdright"><span class="imgs right">{$BUTTON_BACK}</span></div>
+  </div>
+ </div>
+</div>
+</div>

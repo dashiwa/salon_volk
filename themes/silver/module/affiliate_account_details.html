@@ -1,0 +1,146 @@
+{config_load file="$language/affiliate.conf" section="affiliate_account_details"}
+<div class="mod_space">
+<table border="0" width="100%" cellspacing="0" cellpadding="2">
+  <tr>
+    <td class="mod_th" colspan="2">{#category_personal#}</td>
+  </tr>
+  {if $ACCOUNT_GENDER == 'true'}
+  <tr>
+    <td class="mod_tdb">{#entry_gender#}</td>
+    <td class="mod_td2"><table><tr><td>{$gender_male}</td><td>{$gender_female}</td></tr></table></td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_tdb">{#entry_first_name#}</td>
+    <td class="mod_td2">{$firstname_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_lastname#}</td>
+    <td class="mod_td2">{$lastname_content}</td>
+  </tr>
+  {if $ACCOUNT_DOB == 'true'}
+  <tr>
+    <td class="mod_tdb">{#entry_date_of_birth#}</td>
+    <td class="mod_td2">{$dob_content}</td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_tdb">{#entry_email_address#}</td>
+    <td class="mod_td2">{$email_content}</td>
+  </tr>
+  {if $ACCOUNT_COMPANY == 'true'}
+  <tr>
+    <td class="mod_th" colspan="2">{#category_company#}</td>
+  </tr>
+  <tr>
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_company#}</td>
+    <td class="mod_td2">{$company_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_company_taxid#}</td>
+    <td class="mod_td2">{$company_taxid_content}</td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_th" colspan="2">{#category_payment_details#}</td>
+  </tr>
+  {if $AFFILIATE_USE_CHECK == 'true'}
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_payment_check#}</td>
+    <td class="mod_td2">{$payment_check_content}</td>
+  </tr>
+  {/if}
+  {if $AFFILIATE_USE_PAYPAL == 'true'}
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_payment_paypal#}</td>
+    <td class="mod_td2">{$payment_paypal_content}</td>
+  </tr>
+  {/if}
+  {if $AFFILIATE_USE_BANK == 'true'}
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_payment_bank_name#}</td>
+    <td class="mod_td2">{$payment_bank_name_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_payment_bank_branch_number#}</td>
+    <td class="mod_td2">{$payment_bank_branch_number_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_payment_bank_swift_code#}</td>
+    <td class="mod_td2">{$payment_bank_swift_code_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_payment_bank_account_name#}</td>
+    <td class="mod_td2">{$payment_bank_account_name_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_payment_bank_account_number#}</td>
+    <td class="mod_td2">{$payment_bank_account_number_content}</td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_th" colspan="2">{#category_address#}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_street_address#}</td>
+    <td class="mod_td2">{$street_address_content}</td>
+  </tr>
+  {if $ACCOUNT_SUBURB == 'true'}
+  <tr>
+    <td class="mod_tdb">{#entry_suburb#}</td>
+    <td class="mod_td2">{$suburb_content}</td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_tdb">{#entry_post_code#}</td>
+    <td class="mod_td2">{$postcode_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_city#}</td>
+    <td class="mod_td2">{$city_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_country#}</td>
+    <td class="mod_td2">{$country_id_content}</td>
+  </tr>
+  {if $ACCOUNT_STATE == 'true'}
+  <tr>
+    <td class="mod_tdb">{#entry_state#}</td>
+    <td class="mod_td2">{$state_content}</td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_th" colspan="2">{#category_contact#}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_telephone_number#}</td>
+    <td class="mod_td2">{$telephone_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_fax_number#}</td>
+    <td class="mod_td2">{$fax_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_affiliate_homepage#}</td>
+    <td class="mod_td2">{$homepage_content}</td>
+  </tr>
+  {if $PASSWORD_READONLY == 'false'}
+  <tr>
+    <td class="mod_th" colspan="2">{#category_password#}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_password#}</td>
+    <td class="mod_td2">{$password_content}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#entry_password_confirmation#}</td>
+    <td class="mod_td2">{$password_confirmation_content}</td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_tdb"></td>
+    <td class="mod_td2">{$agb_content}</td>
+  </tr>
+</table>
+</div>

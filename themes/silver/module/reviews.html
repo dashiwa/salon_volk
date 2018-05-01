@@ -1,0 +1,34 @@
+{config_load file="$language/lang.conf" section="reviews"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" >
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_rew">{#heading_reviews#}</div>
+</td><td class="mod_redright"></td></tr></table>
+
+{foreach name=aussen item=module_data from=$module_content}
+<div class="mod_space"><div class="mod_corner">
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+  <tr>
+    <td width="150px" align="center" valign="top"><a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" border="0" /></a></td>
+    <td>
+    <div class="mod_arttitlist">{#text_product#}<a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></div>
+    <div class="mod_artautor">{#text_author#} {$module_data.AUTHOR}</div>
+    <div class="mod_info">{#text_rating#} {$module_data.RATING}</div>
+    <div class="brspace"></div><div class="brspace"></div>
+    <div class="cooment_info"><b>{#text_text#}</b> {$module_data.TEXT}</div>
+    </td>
+  </tr>
+</table>
+</div></div>
+{/foreach}
+
+<div class="brspace"></div><div class="brspace"></div>
+<div class="navigation">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="navbar">{$NAVBAR}</td>
+    <td class="navbar1">{$NAVBAR_PAGES}</td>
+  </tr>
+</table>
+</div><div class="brspace"></div>
+</div>

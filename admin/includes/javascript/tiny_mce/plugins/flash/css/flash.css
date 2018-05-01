@@ -1,0 +1,20 @@
+/*
+#####################################
+#  ShopOS: Скрипт интернет магазина
+ #  Copyright (c) 2008-2009              
+ #  http://www.shopos.ru                 
+ # Ver. 1.0.1
+#####################################
+*/
+
+.panel_wrapper div.current {
+	height: 100px;
+}
+
+#width, #height {
+	width: 50px;
+}
+
+#file {
+	width: 250px;
+}

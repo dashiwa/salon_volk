@@ -1,0 +1,89 @@
+{config_load file="$language/lang.conf" section="account"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_acnt">{#heading_account#}</div>
+</td><td class="mod_redright"></td></tr></table>
+{if $error_message}<div class="error">{$error_message}</div>{/if}
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="mod_cel5">
+{if $products_history}
+<div class="h2">{#title_viewed_products#}</div>
+<div class="cont_tab">
+{foreach name=history_products item=products_history from=$products_history}
+<div class="mod_corner" id="myBox">
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="product_name"><a href="{$products_history.PRODUCTS_LINK}">{$products_history.PRODUCTS_NAME}</a></td>
+    </tr>
+    <tr>
+      <td class="product_image mod_td1">{if $products_history.PRODUCTS_IMAGE}<a href="{$products_history.PRODUCTS_LINK}"><img src="{$products_history.PRODUCTS_IMAGE}" alt="{$products_history.PRODUCTS_NAME}" title="{$products_history.PRODUCTS_NAME}" /></a>{/if}
+        <div class="product_price">{$products_history.PRODUCTS_PRICE}</div></td>
+    </tr>
+    <tr>
+      <td class="mod_tdbuy"><a href="{$products_history.PRODUCTS_CATEGORY_URL}">{#text_goto_cat#}</a></td>
+    </tr>
+  </table>
+</div>
+{/foreach}
+</div>
+{else}
+<div class="mod_space">
+<div class="h2">{#title_welcome#}</div>
+<div class="mod_corner" id="myBox">{#text_welcome#}</div>
+</div>
+{/if}
+{if $LINK_LOGIN}
+<div class="mod_space"><a class="a_more" href="{$LINK_LOGIN}">{#text_login#}</a></div>
+{/if}
+    </td>
+    <td class="mod_cel5">
+<div class="h2">{#title_account#}</div>
+<div class="hrspace"></div>
+<div class="mod_space">
+  <table width="100%" border="0">
+  <tr>
+    <td height="23"><a class="mod_acc" href="{$LINK_EDIT}">{#text_edit#}</a>
+      <div class="brspace"></div></td>
+  </tr>
+  <tr>
+    <td height="20"><a class="mod_adrb" href="{$LINK_ADDRESS}">{#text_address#}</a></td>
+  </tr>
+  <tr>
+    <td height="22"><a class="mod_pas" href="{$LINK_PASSWORD}">{#text_password#}</a></td>
+  </tr>
+</table>
+<div class="brspace"></div>
+</div>
+<div class="brspace"></div><div class="brspace"></div>
+{if $order_content}
+<div class="brspace"></div>
+<div class="h2">{#title_orders#}</div>
+<div class="mod_space"><a href="{$LINK_ALL}">{#text_all#}</a></div>
+<div class="hrspace"></div>
+<div class="mod_space">
+{foreach name=aussen item=order_data from=$order_content}
+<table class="mod_table" width="100%" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td width="50%" align="left"><a class="mod_arttime" href="{$order_data.ORDER_LINK}">{$order_data.ORDER_DATE}</a></td>
+    <td width="50%" align="left">{#order_total#} {$order_data.ORDER_TOTAL}</td>
+    <td rowspan="2"><span class="imgs">{$order_data.ORDER_BUTTON}</span></td>
+  </tr>
+  <tr>
+    <td width="50%" align="left">{#order_nr#} {$order_data.ORDER_ID}</td>
+    <td width="50%" align="left">{#order_status#}<br /><span class="red">{$order_data.ORDER_STATUS}</span></td>
+  </tr>
+</table><div class="brspace"></div>
+{/foreach}
+</div>
+<div class="brspace"></div>
+{/if}
+<div class="brspace"></div>
+<div class="h2">{#title_notification#}</div>
+<div class="hrspace"></div>
+<div class="mod_space"><a class="mod_artnews" href="{$LINK_NEWSLETTER}">{#text_newsletter#}</a></div>
+    </td>
+  </tr>
+</table>
+</div>

@@ -1,0 +1,5 @@
+{config_load file="$language/lang.conf" section="product_navigator"}
+
+{if $PREVIOUS!=''}&nbsp;<a href="{$PREVIOUS}"><img src="{$tpl_path}img/pre.jpg" title="Предыдущий"/></a>&nbsp;{/if}
+{if $NEXT!=''}&nbsp;<a href="{$NEXT}"><img src="{$tpl_path}img/sl.jpg" title="Следующий"/></a>{/if}
+

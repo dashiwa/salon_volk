@@ -1,0 +1,69 @@
+{config_load file="$language/lang.conf" section="boxes"}
+{if $deny_cart neq 'true'}
+<!-- shopping_cart //-->
+<script type="text/javascript" src="jscript/jscript_ajax_cart.js"></script>
+<div id="divShoppingCart">
+<div class="block"> 
+		<div class="blueblock_header"><h3><a href="shopping_cart.php">{#heading_cart#}</a></h3></div> 
+		  <div class="block_center"><div class="block_centertxt"> 
+			<ul class="list"> 
+<table border="0" width="100%" cellspacing="0" cellpadding="0" >
+{if $empty=='false'}
+    <tr >
+      <td width="100%" align="left">
+<!-- содержимое корзины -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				{foreach name=aussen item=products_data from=$products}
+				  <tr>
+					<td align="left">&nbsp;{$products_data.QTY}&nbsp;x&nbsp;</td>
+					<td width="100%" align="left"><a href="{$products_data.LINK}" title="{$products_data.NAME}">{$products_data.NAME|os_truncate:$smarty.const.MAX_DISPLAY_CART:"...":true}</a></td>
+				  </tr>
+				{/foreach}
+				</table>
+<!-- /содержимое корзины -->
+      </td>
+      <td align="center">
+        <img src="{$tpl_path}img/cart_big_full.gif" alt="" hspace="0" vspace="3" />
+      </td>
+    </tr>
+
+            {if $DISCOUNT}
+			<tr class="cartBox">
+              <td colspan="2" align="right" class="productDiscountPrice">{#text_discount#}&nbsp;{$DISCOUNT}</td>
+            </tr>{/if}
+			<tr class="cartBox">
+              <td colspan="2" align="center"><a href="{$LINK_CHECKOUT}">{#text_checkout#}</a></td>
+            </tr>
+{else} <!-- cart has no content --> 
+    <tr class="cartBox">
+      <td width="100%" class="cartBoxContents" align="right">
+      {#text_empty_cart#}
+      </td>
+      <td align="center">
+        <img src="{$tpl_path}img/cart_big_empty.gif" alt="" hspace="0" vspace="3" />
+      </td>
+    </tr>
+{/if}
+
+{if $empty=='false'}    
+    <tr class="cartBox1">
+      <td colspan="2" class="cartBox1">
+        <table width="100%" cellspacing="0" cellpadding="0" class="cartBox1">
+           <tr>
+             <td width="100%" class="cartBoxContents" align="right"></td>
+             <td class="price"><nobr>&nbsp;{$UST}<strong>{#text_total#}</strong> {$TOTAL}&nbsp;</nobr></td>
+           </tr>
+        </table>
+      </td>
+    </tr>
+{else} <!-- cart has no content -->     
+
+{/if}
+    </table> 
+			</ul> 
+			</div></div> 
+		  <div class="block_bot"></div> 
+	</div>
+</div>
+<!-- shopping_cart_eof //-->
+{/if}

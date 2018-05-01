@@ -1,0 +1,40 @@
+{config_load file="$language/lang.conf" section="shopping_cart"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_cart">{#heading_cart#}</div>
+</td><td class="mod_redright"></td></tr></table>
+<div class="mod_space">{$MODULE_gift_cart}</div>
+{if $info_message!=''}
+<div class="info">{$info_message}</div>
+{/if}
+{if $cart_empty==true}
+<div class="info">{#text_empty#}</div>
+<div class="mod_space">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="1"></td>
+    <td class="mod_tdright"><span class="right imgs">{$BUTTON_CONTINUE}</span></td>
+  </tr>
+</table>
+</div>
+{else}
+{$FORM_ACTION}
+{$HIDDEN_OPTIONS}
+<div class="mod_space">
+<div class="mod_corner">{$MODULE_order_details}</div>
+</div>
+{if $info_message_1!=''}
+<div class="info">{$info_message_1}{$min_order}{$info_message_2}{$order_amount}</div>
+{/if}
+<div class="mod_space">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="1">{$BUTTON_RELOAD}</td>
+    <td class="mod_tdright"><span class="right imgs">{$BUTTON_CHECKOUT}</span></td>
+  </tr>
+</table>
+</div>
+{$FORM_END}
+{/if}
+</div>

@@ -1,0 +1,81 @@
+{config_load file="$language/affiliate.conf" section="affiliate_summary"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_affil">{#heading_title#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+<div class="mod_space">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="mod_tdb">{#text_greeting#}</td>
+    <td class="mod_td2">{$affiliate.affiliate_firstname}&nbsp;{$affiliate.affiliate_lastname}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_affiliate_id#}</td>
+    <td class="mod_td2">{$affiliate.affiliate_id}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_affiliate_period#}</td>
+    {$FORM_ACTION}<td class="mod_td2">{$period_selector}</td></form>
+  </tr>
+</table>
+{literal}
+<script language="javascript"><!--
+function popupAffWindow(url) {
+  window.open(url,'popupWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=450,height=600,screenX=150,screenY=150,top=150,left=150')
+}
+//--></script>
+{/literal}
+
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+ <div class="cont_tab">
+  <div class="mod_row"><div class="mod_th">{#text_summary_title#}</div></div>
+ </div>
+ <div class="cont_tab">
+  <div class="mod_row"><div class="mod_td2">
+        <table width="100%" border="0" cellpadding="4" cellspacing="2">
+          <tr>
+            <td width="35%" class="mod_tdright">{#text_impressions#}{$LINK_IMPRESSION}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate_impressions}</td>
+            <td width="35%" class="mod_tdright">{#text_visits#}{$LINK_VISIT}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate.clickthrough_count}</td>
+          </tr>
+          <tr>
+            <td width="35%" class="mod_tdright">{#text_transactions#}{$LINK_TRANSACTIONS}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate_transactions}</td>
+            <td width="35%" class="mod_tdright">{#text_conversions#}{$LINK_CONVERSION}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate_conversions}</td>
+          </tr>
+          <tr>
+            <td width="35%" class="mod_tdright">{#text_amount#}{$LINK_AMOUNT}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate_amount}</td>
+            <td width="35%" class="mod_tdright">{#text_average#}{$LINK_AVERAGE}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate_average}</td>
+          </tr>
+          <tr>
+            <td width="35%" class="mod_tdright">{#text_comission_rate#}{$LINK_COMISSION_RATE}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate_percent}</td>
+            <td width="35%" class="mod_tdright">{#text_comission#}{$LINK_COMISSION}{#text_summary_help#}</a></td>
+            <td width="15%">{$affiliate_commission}</td>
+          </tr>
+        </table>
+  </div></div>
+ </div>
+</div>
+</div>
+{if AFFILATE_USE_TIER == 'true'}
+{#text_summary_title_tier#}{$affiliate_percent_tier_table}
+{/if}
+<div class="info">{#text_summary#}</div>
+<div class="mod_space">
+<div align="right">
+  <table border="0" cellpadding="4" class="right">
+    <tr>
+      <td><span class="imgs">{$LINK_BANNER}</span></td>
+      <td><span class="imgs">{$LINK_CLICKS}</span></td>
+      <td><span class="imgs">{$LINK_SALES}</span></td>
+    </tr>
+  </table>
+</div></div>
+</div>

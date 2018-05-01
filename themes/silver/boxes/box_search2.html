@@ -1,0 +1,24 @@
+{config_load file="$language/lang.conf" section="boxes"}
+<div class="1h-search">
+	{$FORM_ACTION}
+		{$INPUT_SEARCH}
+		<input type="submit" class="button" value="" />
+	{$FORM_END}
+</div>
+<a class="search-link" href="{$LINK_ADVANCED}">{#text_advanced_search#}</a>
+<div class="ajaxQuickFind" id="ajaxQuickFind" style="text-align: left;"></div>
+{literal}
+<script language="javascript" type="text/javascript">
+	function ajaxQuickFind(elt) {
+	//if(ajaxQuickFindUpForm.keywords.value.length > 2)
+		loadXMLDoc('ajaxQuickFind', hashFormFields(ajaxQuickFindUpForm), true);
+	}
+	var timeout = null;
+	var ajaxQuickFindUpForm = null;
+	function ajaxQuickFindUp(elt) {
+		ajaxQuickFindUpForm = elt.form;
+		if (timeout) clearTimeout(timeout);
+		timeout = setTimeout('ajaxQuickFind()', 500);
+	}
+</script>
+{/literal}

@@ -1,0 +1,67 @@
+{config_load file="$language/lang.conf" section="login"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_acnt">{#heading_login#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+{if $info_message!=''}
+<div class="info">{$info_message}</div>
+{/if}
+{if $account_option=='account' or $account_option=='both'}
+<div class="mod_space">
+<table width="100%" cellpadding="10" cellspacing="0">
+  <tr>
+    <td class="mod_td3">
+    <div class="mod_corner" id="myBox">
+    <b class="h2">{#title_new#}</b><br /><br />
+    {#text_new#}<br />
+    <span class="imgs">{$BUTTON_NEW_ACCOUNT}</span>
+    </div>
+    </td>
+    <td class="mod_td3">
+    <div class="mod_corner" id="myBox">
+    <b class="h2">{#title_returning#}</b><br /><br />
+    {#text_returning#}{$FORM_ACTION}
+    <table width="100%" cellpadding="10" cellspacing="0">
+      <tr>
+        <td class="mod_tdb">{#text_email#}</td>
+        <td class="mod_td2">{$INPUT_MAIL}</td>
+      </tr>
+      <tr>
+        <td class="mod_tdb">{#text_password#}</td>
+        <td class="mod_td2">{$INPUT_PASSWORD}</td>
+      </tr>
+     {if $CAPTCHA_IMG !=''}
+      <tr>
+        <td class="mod_tdb">{$CAPTCHA_IMG}</td>
+        <td class="mod_td2">{$CAPTCHA_INPUT}</td>
+      </tr>
+     {/if}
+      <tr>
+        <td class="mod_tdb"></td>
+        <td class="mod_td2">{$BUTTON_LOGIN}</td>
+      </tr>
+      <tr>
+        <td class="mod_tdb"></td>
+        <td class="mod_td2"><a href="{$LINK_LOST_PASSWORD}">{#text_lost_password#}</a></td>
+      </tr>
+    </table>
+   </div>{$FORM_END}
+    </td>
+  </tr>
+</table>
+</div>
+
+{/if}
+<br />
+{if $account_option=='both' or $account_option=='guest'}<br />
+<div class="mod_space">
+    <div class="mod_corner" id="myBox">
+    <b class="h2">{#title_guest#}</b><br /><br />
+    {#text_guest#}<br />
+    <span class="imgs">{$BUTTON_GUEST}</span>
+</div>
+ </div>
+{/if}
+
+</div>

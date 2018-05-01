@@ -1,0 +1,54 @@
+{config_load file="$language/lang.conf" section="featured"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0" class="">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_feat">{#heading_text#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+  {foreach name=aussen item=module_data from=$module_content}
+  {php} $col++;
+  {/php}
+<td class="mod_cel5">
+<div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr"> 
+<table width="100%" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td class="product_name center" colspan="2" height="40"><a href="{$module_data.PRODUCTS_LINK}"><strong>{$module_data.PRODUCTS_NAME}</strong></a></td>
+  </tr>
+  <tr>
+    <td height="69" align="left" valign="top" >
+      <div align="left"><a class="logo_1"></a>
+          <p align="center">{if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" title="{$module_data.PRODUCTS_NAME}" /></a></p><a href="{$module_data.PRODUCTS_LINK}">
+          {/if}</a></div></td>
+    
+  </tr>
+  <tr>
+   <td   height="25">
+          <div class="product_price_2"> 
+             <div align="center">
+                  {$module_data.PRODUCTS_PRICE}{if $module_data.PRODUCTS_VPE}
+                  {$module_data.PRODUCTS_VPE}{/if} {if $module_data.PRODUCTS_SHIPPING_LINK}
+                  {$module_data.PRODUCTS_SHIPPING_LINK}{/if}
+            </div>    
+       </div>
+   </div>
+   <div align="center">{if $module_data.PRODUCTS_TAX_INFO}</div>
+   <div class="product_vpe">{$module_data.PRODUCTS_TAX_INFO}</div>{/if}    </td>
+  </tr>
+</table>
+</div>
+</div></div></div></div></div></div></div></div> 
+</td>
+
+
+{php}
+  if ($col>=2) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}
+    </tr>
+  </table>
+</div>

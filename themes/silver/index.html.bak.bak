@@ -1,0 +1,146 @@
+﻿{config_load file="$language/lang.conf" section="index"}
+<!--[if lt IE 7]>
+<script type="text/javascript" src="/js/unitpngfix/unitpngfix.js"></script>
+<![endif]--> 
+ 
+<body> 
+ <div class="base">    	
+	<table width="100%" cellpadding="7" cellspacing="0" border="0" class="ss_center1"> 
+   <tr> 
+	 
+<td align="right" >
+<div class="login-box">
+ 
+ <!--Мои данные -->
+{if $account}{if $smarty.session.customer_id}
+<a href="{$account}">{#link_account#}</a><span class="delm">| </span>
+{/if}{/if}
+ <!--/Мои данные -->
+ 
+ <!--Вход-->	
+	{if $account}{if $smarty.session.customer_id}
+ <a href="{$logoff}">{#link_logoff#}</a>
+  {else}
+ <!--<a href="{$login}">{#link_login#}</a>-->
+{/if}
+{/if}   
+  </div>	
+  </td> 
+<!--/Вход -->	
+	
+   </tr> 
+   </table> 
+ 
+   
+   <table width="100%" cellpadding="5" cellspacing="0" border="0" class="ss_center"> 
+   <tr> 
+	<td align="left" width="300">
+	
+<!-- Лого -->
+	<div class="logo"><a title="Свадебный салон Марина" href="/"><img src="{$tpl_path}img/NoLogo.jpg" alt="Свадебный салон Марина " /></a></div>
+<!--/ Лого -->
+	</td> 
+	
+	<td width="50%" valign="middle" align="left" >
+
+ 		
+	</td>
+   	<td width="250" valign="middle" align="left" >
+Наши телефоны:<br><div class="cat_name">   (01512) 2-66-72
+ <br>(029) 282-23-02 </div>
+ 		
+	</td> 
+	</table> 
+   
+ 
+
+<!--Хлебные крошки-->
+ <table width="100%" cellpadding="0" cellspacing="0" class="ss_center"> 
+    <tr> <td class="speedbar_center" align="left">{$navtrail}</td> 
+ <td class="speedbar_center" align="right">
+ <a href="{$mainpage}">{#text_mainpage#}</a><span class="delm"> |</span>
+      <a href="news.php">Новости</a><span class="delm"> |</span>
+	  </td>
+ </tr> 
+ </table> 
+ <!--/Хлебные крошки-->
+ 
+<table width="100%" class="ss_center" cellpadding="0" cellspacing="0" border=0> 
+<tr valign="top"> 
+	<td class="content_left" align="left"> 
+	<div class="left_block"> 
+{$box_MANUFACTURERS_INFO}
+{$box_CATEGORIES}
+
+
+
+{$box_CONTENT}
+
+{$box_ADD_QUICKIE}
+
+
+
+{$box_FEATURED}
+{$box_AUTHORS}
+
+
+{$box_ADMIN}
+
+{$box_userinfo}
+{$box_ORDER_HISTORY}
+
+{$box_AFFILIATE}
+{$box_WHATSNEW}
+
+
+{$box_INFOBOX}
+
+
+
+
+	</div> 
+ 
+	</td><!-- /content_left --> 
+ 
+ 
+	<td class="content_center" align="left"> 
+ 
+	   <div class="center_block"> 
+
+	   
+<table width="100%" cellspacing="0" cellpadding="0" border=0> 
+<tr>  <td>{$text}{$main_content} </td> </tr> 
+</table>
+    </div> 
+	</td>
+	<!-- /content_center -->  
+</tr> 
+</table>  
+<!-- /page -->  
+ 
+<table width="100%" cellpadding="0" cellspacing="0" border=0> 
+<tr> 
+	<td class="footer_left" align="left"><div class="copy">© 2013 marina.volk.by</div></td> 
+	<td class="footer_center" align="left"> 
+	   <div class="copy"> 
+	  Свадебный салон Марина. Свадебные платья напрокат. Вечерние платья напрокат. Волковыск, ул.Фабричная 10
+	  </div> 
+	</td> 
+	<td class="footer_right" align="left"> 
+	   <div class="copy"> 
+ тел. (01512) 2-66-72, (029) 282-23-02
+	   </div> 
+	</td> 
+</tr> 
+</table> 
+<table cellspacing="10" cellpadding="0" width="100%">
+<tr  align="center"><td> 
+{literal}
+<!--LiveInternet counter-->
+<!--/LiveInternet-->{/literal}
+</td>
+
+</table>
+</div>
+</body> 
+</html>

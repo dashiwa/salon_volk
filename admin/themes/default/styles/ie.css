@@ -1,0 +1,14 @@
+/*
+#####################################
+#  ShopOS: Shopping Cart Software.
+#  Copyright (c) 2008-2010
+#  http://www.shopos.ru
+#  http://www.shoposs.com
+#  Ver. 1.0.2
+#####################################
+*/
+
+input {border: expression( this.type=="radio" ? 'solid 0px' : 'inherit' );} 
+input {border: expression( this.type=="checkbox" ? 'solid 0px' : 'inherit' );} 
+.sect1 {line-height: 15px;}  
+.chapter {line-height: 30px;}

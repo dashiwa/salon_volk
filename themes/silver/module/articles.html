@@ -1,0 +1,49 @@
+{config_load file="$language/lang.conf" section="articles"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_article">{$HEADER_TEXT}</div>
+</td><td class="mod_blueright"></td></tr></table>
+<div class="mod_artsearch">
+<form action="articles.php" method="get">
+<input type="hidden" name="description" value="1" />
+<table>
+  <tr>
+    <td>{#text_search#}</td>
+    <td><input type="text" name="akeywords" /></td>
+    <td><input type="image" src="{$tpl_path}images/SpotlightBlueButton.png" alt="{#text_search#}" title="{#text_search#}" /></td>
+  </tr>
+</table>
+</form>
+</div>
+
+{if $no_articles=='true'}
+<div class="error">{#text_no_article#}</div>
+{else}
+  {foreach name=aussen item=module_data from=$module_content}
+  {php} $col++; 
+  {/php}
+
+<div class="mod_moreinfo">
+<div class="mod_arttitlist"><a href="{$module_data.ARTICLE_LINK}">{$module_data.ARTICLE_NAME}</a></div>
+<div class="mod_moreinfo">
+{if $module_data.ARTICLE_DATE}<div class="mod_arttime">{#text_date#} {$module_data.ARTICLE_DATE}</div>{/if}
+{if $module_data.ARTICLE_CATEGORY_NAME}<div class="mod_artcat">{#text_category#} <a href="{$module_data.ARTICLE_CATEGORY_LINK}">{$module_data.ARTICLE_CATEGORY_NAME}</a></div>{/if}
+{if $module_data.AUTHOR_NAME}<div class="mod_artautor">{#text_author#} <a href="{$module_data.AUTHOR_LINK}">{$module_data.AUTHOR_NAME}</a></div>{/if}
+{if $ARTICLE_URL}<div class="mod_arturl">{#text_url#} <a href="http://{$ARTICLE_URL}" target="_blank">http://{$ARTICLE_URL}</a></div>{/if}
+</div></div>
+</div><div class="hrspace"></div><div class="mod_row">
+  {/foreach}
+
+
+<div class="brspace"></div><div class="brspace"></div>
+<div class="navigation">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="navbar">{$NAVIGATION_BAR}</td>
+    <td class="navbar1">{$NAVIGATION_BAR_PAGES}</td>
+  </tr>
+</table>
+</div><div class="brspace"></div>
+{/if}
+</div>

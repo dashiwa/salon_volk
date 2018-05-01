@@ -1,0 +1,57 @@
+{config_load file="$language/lang.conf" section="boxes"}
+{$FORM_ACTION}
+<table border="0" width="390px" >
+<tr ><td height="3px" ></td></tr >
+<tr >
+<td width="40px" align="right" >
+{#heading_search#}
+</td>
+<td>
+<input type="text" size=50 name="keywords" onkeyup="ajaxQuickFindUp(this);" id="quick_find_keyword" />
+</td>
+<td width="50px">
+{$BUTTON_SUBMIT}
+</td>
+ <!--<td valign="middle" align="center" width="100%">
+ <a href="{$LINK_ADVANCED}" style="color: #ffffff;"> {#text_advanced_search#} </a>
+ </td>-->
+</tr>
+</table>
+{$FORM_END}
+         
+<!--		 
+			 <div class="leftmenu"> 
+				<ul class="list">
+
+            <table width="70%"  border="0" cellpadding="2" cellspacing="0">
+              <tr>
+                <td valign="middle">{$INPUT_SEARCH}</td>
+                <td valign="middle" >{$BUTTON_SUBMIT}</td>
+                <td valign="middle" width="100%"> <a href="{$LINK_ADVANCED}"> {#text_advanced_search#} </a></td>
+			  </tr>
+              
+            </table>
+            
+    
+		       </ul>
+			 </div> 
+	  
+		
+
+{$FORM_END}
+-->	
+{literal}
+<script language="javascript" type="text/javascript">
+	function ajaxQuickFind(elt) {
+//		if(ajaxQuickFindUpForm.keywords.value.length > 2)
+			loadXMLDoc('ajaxQuickFind', hashFormFields(ajaxQuickFindUpForm), true);
+	}
+	var timeout = null;
+	var ajaxQuickFindUpForm = null;
+	function ajaxQuickFindUp(elt) {
+		ajaxQuickFindUpForm = elt.form;
+	  if (timeout) clearTimeout(timeout);
+	  timeout = setTimeout('ajaxQuickFind()', 500);
+	}
+</script>
+{/literal}

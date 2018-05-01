@@ -1,0 +1,38 @@
+{config_load file="$language/lang.conf" section="new_products"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0" class="">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_feat">{#heading_text#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+
+  <table width="100%" height="230" cellpadding="0" cellspacing="0" >
+    <tr>
+  {foreach name=aussen item=module_data from=$module_content}
+  {php} $col++;
+  {/php}
+<td class="mod_cel5">
+   <div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr"> 
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td  height="40" class="product_name center" colspan="2"><a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></td>
+  </tr>
+  <tr>
+    <td class="product_image">
+           <p>{if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" title="{$module_data.PRODUCTS_NAME}" /></a>{/if}</p></td>
+    
+  </tr>
+  
+</table>
+</div>
+ </div></div></div></div></div></div></div></div> 
+</td>
+  {php}
+  if ($col>=2) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}
+    </tr>
+  </table>
+</div>

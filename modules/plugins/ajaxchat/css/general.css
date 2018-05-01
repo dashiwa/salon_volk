@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+.shoutbox .clear{
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	display: block;
+}
+.shoutbox a{
+	text-decoration: none;
+}
+.shoutbox strong{
+	font-weight: 400;
+}
+/******* GENERAL RESET *******/
+/******* LOGO *******/
+.shoutbox #logo{
+	margin-top: 1em;
+	display: block;
+}
+/******* /LOGO  *******/
+/******* FORM *******/
+.shoutbox #form{
+	margin: 5px;
+}
+.shoutbox #form table td{
+	text-align: left;
+	font-size: 11px;
+}
+.shoutbox #form label{
+	font-weight: 700;
+}
+.shoutbox #form input{
+	background: #fff;
+	color: #5f95ef;
+	font-size: 11px;
+	font-weight: 700;
+	padding:3px 4px 3px 4px;
+	border:1px solid #C9CDFD;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+}
+.shoutbox #form input.text{
+	font-weight: normal;
+	color: #565656;
+	border: 1px solid #9c9c9c;
+	width: 250px;
+	padding: 2px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+.shoutbox #form input.text.user{
+	width: 100px;
+}
+/******* /FORM *******/
+
+.shoutbox #container{
+    margin-top:5px;
+    margin-bottom:5px;
+	width: 200px;
+}
+
+/******* CONTENT *******/
+.shoutbox  .content{
+	background: #efefef;
+	background: #fff;
+	border:1px solid #d0ccc9;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	-webkit-border-radius:6px;
+	-khtml-border-radius:6px;
+	
+	text-align: left;
+	padding: 10px;
+	padding-bottom: 10px;
+	font-size: 11px;
+}
+.shoutbox .content h1{
+	line-height: 1em;
+	vertical-align: middle;
+	padding: 0px 5px 5px 20px;
+	font-size: 13px;
+	background: url(images/1.png) no-repeat scroll left top;
+	font-weight: bold
+}
+.shoutbox .date{
+	font-weight: normal;
+	font-size: 9px;
+	color: #aeaeae;
+}
+/******* /CONTENT *******/
+/******* LOADING *******/
+.shoutbox  #loading{
+	text-align: center;
+	height:20px; margin-bottom:10px
+}
+/******* /LOADING *******/

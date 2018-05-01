@@ -1,0 +1,13 @@
+a.import
+{
+   border-bottom: 1px dashed blue;
+   color:blue;
+   text-decoration:none;
+}
+
+a.import:hover
+{
+   color:red;
+   border-bottom: 1px dashed red;
+   text-decoration:none;
+}

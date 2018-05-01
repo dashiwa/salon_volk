@@ -1,0 +1,51 @@
+{config_load file="$language/lang.conf" section="reviews"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td>
+<div class="modtit_rew">{#heading_reviews_write#}</div>
+</td></table>
+
+{if $captcha_error}
+<div class="error">{$captcha_error}</div>
+{/if}
+{if $error}
+<div class="error">{$error}</div>
+{else}
+{$FORM_ACTION}
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="mod_tdb">{#text_product#}</td>
+    <td class="mod_td2">{$PRODUCTS_NAME}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_author#}</td>
+    <td class="mod_td2">{$AUTHOR}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_input#}</td>
+    <td class="mod_td2">{$INPUT_TEXT}<br /><font size="1" face="Verdana, Arial, Helvetica, sans-serif">{#text_note#}</font></td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_rating#}</td>
+    <td class="mod_td2"><span class="red">{#text_bad#}</span>{$INPUT_RATING}<span class="red">{#text_good#}</span></td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_sec_code#}</td>
+    <td class="mod_td2">{$CAPTCHA_IMG}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_sec_code_text#}</td>
+    <td class="mod_td2">{$CAPTCHA_INPUT}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb"><span class="imgs">{$BUTTON_BACK}</span></td>
+    <td class="mod_td2"><span class="right">{$BUTTON_SUBMIT}</span></td>
+  </tr>
+</table>
+</div>
+</div>
+{$FORM_END}
+{/if}
+</div>

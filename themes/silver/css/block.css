@@ -1,0 +1,118 @@
+.searchbut{background-position: top;}
+.searchbut:hover{background-position: bottom;}
+.best_num, .best_space{	width: 20px;}
+.best_space, .best_price, .best_name{
+
+}
+.best_num, .best_price{
+
+}
+.best_num, .best_name{border-top: 1px solid #dddddd;}
+.best_num, .best_name, .best_price{
+}
+.best_num, .best_price{color: #393acc;font-weight: bold;} 
+.best_num{border-left: 1px solid #dddddd;height: 30px;vertical-align: middle;text-align: center;}
+.best_price{text-align: right;padding: 4px 4px 4px 4px;}
+.best_name{text-align: right;}
+.qustione{background-image: url(../images/help.png);}
+.answer{background-image: url(../images/tag.png);}
+.qustione, .answer{background-repeat: no-repeat;background-position: left top;padding: 0 0 0 20px;}
+.box_content{padding: 0px 7px 7px 7px;}
+.box_cl, .box_cc, .box_cr, .mod_cel3, .mod_redleft, .mod_redright, .mod_redcenter, .mod_blueleft, .mod_blueright, .mod_bluecenter, .mod_cel5, .mod_cel{display: table-cell;} 
+.box_cl{
+	background-position: left bottom;
+}
+.box_cr{
+	background-position: right bottom;
+}
+.box_cc{
+	background: url(../images/cartbg.png) repeat-x bottom;
+	color: #f0f1ff;
+	vertical-align: middle;
+}
+.box_cl, .box_cr{
+	width: 15px;
+	background-image: url(../images/cartbg1.png);
+	background-repeat: no-repeat;	
+}
+.box_cl, .box_cr, .box_cc{height: 70px;}
+
+
+
+
+.cart_cont{
+	background: url(../images/shopping-cart-icon.png) no-repeat left;
+	padding: 10px 5px 10px 55px;
+	position: relative;
+	}
+.crt{
+	display: block;
+	width: 250px;
+	height: 60px;
+	position: absolute;
+	margin-left: -70px;
+	margin-top: -10px;
+}
+
+
+
+.mod_redleft, .mod_redright, .mod_redcenter, .mod_blueleft, .mod_blueright, .mod_bluecenter{height: 52px;} 
+.mod_redleft, .mod_redright, .mod_redcenter{background-image: url(../images/red.png);}
+.mod_blueleft, .mod_blueright, .mod_bluecenter{background-image: url(../images/blue.png);}
+.mod_row{display: table-row;}
+.mod_cel5{width: 50%;}
+.mod_cel3{width: 33%;} 
+.mod_cel, .mod_cel5, .mod_cel3{padding: 3px 5px 3px 5px;vertical-align: top;} 	
+.mod_cel{} 
+.mod_redleft, .mod_redright, .mod_blueleft, .mod_blueright{background-repeat: no-repeat;width: 16px;}
+.mod_bluecenter a, .mod_redcenter a{color: #f0f1ff;}
+.mod_redleft, .mod_blueleft{ background-position: left top;}
+.mod_redright, .mod_blueright{background-position: right top;}
+.mod_redcenter, .mod_bluecenter{background-position: bottom;background-repeat: repeat-x; vertical-align: middle;}
+.modtit_newsletter{}
+.modtit_affil{}
+.modtit_adsearch{}
+.modtit_cat{background-image: url(../images/Menu.png);}
+.modtit_feat{
+	color: #FFFFFF;
+}
+.modtit_newproduct{background-image: url(../images/newproduct.png);}
+.modtit_news{background-image: url(../images/1new.png);}
+.modtit_fag{background-image: url(../images/HelpBlueButton.png);}
+.modtit_article{background-image: url(../images/Document.png);}
+.modtit_adres{background-image: url(../images/address-book.png);}
+.modtit_acnt{background-image: url(../images/User.png);}
+.modtit_cart{background-image: url(../images/cart.png);}
+.modtit_ship{background-image: url(../images/LorryGreen.png);}
+.modtit_pay{background-image: url(../images/credit-card-icon.png);}
+.modtit_rew{background-image: url(../images/reviews.png);}
+.box_viewed{background-image: url(../images/view.png);}
+.box_addqi{background-image: url(../images/AddGreenButton.png);}
+.modtit_special{background-image: url(../images/special.png);}
+.box_best{background-image: url(../images/Transfer.png);}
+.box_admin{background-image: url(../images/Menuadmin.png);}
+.box_login{background-image: url(../images/login.png);}
+.box_manf{background-image: url(../images/manf.png);}
+.box_manf,.box_addqi, .box_viewed, .modtit_rew, .modtit_pay, .modtit_ship, .modtit_cart, .modtit_acnt, .modtit_adres, .modtit_cat, .modtit_news, .modtit_newproduct, .modtit_fag, .modtit_article, .modtit_newsletter, .modtit_affil, .modtit_adsearch{
+	color: #4682B4;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 18px 1px 16px 40px;
+	background-position:  left 8px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.box_manuf, .box_manuf:hover{
+	border: 1px solid #dddddd;
+	padding: 2px 2px 2px 20px;
+	margin: 2px 0 2px 0;
+	background-position: 2px 50%;
+	background-image: url(../images/cat.png);
+	background-repeat: no-repeat;
+}
+.box_manuf{background-color: white;}
+.box_manuf:hover{background-color: #dddddd;}
+
+
+
+

@@ -1,0 +1,56 @@
+{config_load file="$language/lang.conf" section="checkout_shipping"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_ship">{#heading_shipping#}</div>
+</td><td class="mod_redright"></td></tr></table>
+{$FORM_ACTION}
+{if $SHIPPING_ADDRESS=='true'}
+<div class="h2">{#title_address#}</div>
+<div class="hrspace"></div>
+<table width="100%" cellpadding="10" cellspacing="0">
+  <tr>
+    <td><div class="mod_space"><b>{#title_address#}</b><br />
+    {#text_addressbook#}<br /><span class="imgs">{$BUTTON_ADDRESS}</span></div></td>
+    <td><div class="addres">{$ADDRESS_LABEL}</div></td>
+  </tr>
+</table>
+{/if}
+<div class="brspace"></div>
+<div class="h2">{#title_shipping#}</div>
+<div class="hrspace"></div>
+<div class="mod_space">
+<div class="mod_corner">{$SHIPPING_BLOCK}</div>
+</div>
+<div class="mod_space">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>{#title_continue#}</b><div class="hrspace"></div>{#text_continue#}</td>
+    <td width="1"><span class="right">{$BUTON_CONTINUE}</span></td>
+  </tr>
+</table>
+</div>
+{$FORM_END}
+
+<div class="statusbar">
+<div class="h2">Прогрес</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+          <td width="25%"><center><b>1. {#text_shipping_info#}</b></center></td>
+          <td width="25%"><center>2. {#text_payment_info#}</center></td>
+          <td width="25%"><center>3. {#text_confirm#}</center></td>
+          <td width="25%"><center>4. {#text_finished#}</center></td>
+          </tr>
+</table>
+<div id="progressbar"></div>
+</div>
+</div>
+{literal}
+	<script type="text/javascript">
+	$(function() {
+		$("#progressbar").progressbar({
+			value: 25
+		});
+	});
+</script>
+{/literal}

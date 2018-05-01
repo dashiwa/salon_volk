@@ -1,0 +1,91 @@
+{config_load file="$language/lang.conf" section="checkout_confirmation"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_feat">{#heading_confirmation#}</div>
+</td><td class="mod_redright"></td></tr></table>
+<div class="info">{#text_information#}</div>
+{if $IP_LOG=='true'}
+<div class="mod_space">
+<table width="100%" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td><b>{#text_ip#}</b></td>
+    <td><b>{$CUSTOMERS_IP}</b></td>
+  </tr>
+</table></div>
+{/if}
+{if $SHIPPING_ADDRESS=='true'}
+<div class="mod_space"><div class="mod_corner">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left"><b>{#text_shipping_address#}</b><em> <a class="a_more" href="{$SHIPPING_ADDRESS_EDIT}">{#text_edit#}</a></em><div class="brspace"></div><div class="adrbil">{$DELIVERY_LABEL}</div></td>
+    <td align="right">{if $BILLING_LABEL}<b>{#text_payment_address#}</b><em> <a class="a_more" href="{$BILLING_ADDRESS_EDIT}">{#text_edit#}</a></em><div class="brspace"></div><div class="addres">{$BILLING_LABEL}</div>{/if}</td>
+  </tr>
+</table></div></div>
+{/if}
+{if $SHIPPING_METHOD}
+<div class="mod_space"><div class="shipping"><b>{#text_shipping_method#}</b>&nbsp;{$SHIPPING_METHOD}&nbsp;<a href="{$SHIPPING_EDIT}" class="a_more"><i>{#text_edit#}</i></a></div></div>
+{/if}
+{if $PAYMENT_METHOD!=''}
+<div class="mod_space"><div class="payment"><b>{#text_payment_method#}</b>&nbsp;{$PAYMENT_METHOD}&nbsp;<a href="{$PAYMENT_EDIT}" class="a_more"><i>{#text_edit#}</i></a></div></div>
+{/if}
+{if $ORDER_COMMENTS!=''}
+<div class="mod_space"><div class="comments"><b>{#text_comments#}</b>&nbsp;{$ORDER_COMMENTS}&nbsp;<a href="{$PAYMENT_EDIT}" class="a_more"><i>{#text_edit#}</i></a></div></div>
+{/if}
+{if $PAYMENT_INFORMATION!=''}
+<div class="brspace"></div>
+<div class="mod_space">
+ <div class="h2">{#text_payment_info#}</div>
+<div class="mod_corner">
+  {$PAYMENT_INFORMATION}
+</div></div>
+{/if}
+<div class="brspace"></div>
+<div class="mod_space">
+ <div class="h2">{#text_products#}</div><a class="a_more" href="{$PRODUCTS_EDIT}">{#text_edit#}</a>
+<div class="mod_corner">
+<div>{$PRODUCTS_BLOCK}</div>
+<div class="hrspace"></div>
+<div align="right">{$TOTAL_BLOCK}</div>
+</div>
+</div>
+<div class="mod_space">
+ <div class="cont_tab">
+  <div class="mod_row ">
+    <div class="mod_cel">{$CHECKOUT_FORM} {if $MODULE_BUTTONS!=''} {$MODULE_BUTTONS} {/if}</div>
+    <div class="mod_tdright"><span class="right">{$CHECKOUT_BUTTON}</span></div>
+  </div>
+ </div>
+</div>
+<div class="statusbar">
+<div class="h2">Прогрес</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+          <td width="25%"><center>1. {#text_shipping_info#}</center></td>
+          <td width="25%"><center>2. {#text_payment_info#}</center></td>
+          <td width="25%"><center><b>3. {#text_confirm#}</b></center></td>
+          <td width="25%"><center>4. {#text_finished#}</center></td>
+          </tr>
+</table>
+<div id="progressbar"></div>
+</div>
+{literal}
+	<script type="text/javascript">
+	$(function() {
+		$("#progressbar").progressbar({
+			value: 75
+		});
+	});
+</script>
+{/literal}
+{if $REVOCATION}
+<div class="mod_space">
+<div class="h2">{$REVOCATION_TITLE}</div>
+</div>
+<div class="error">{$REVOCATION}</div>
+<div class="mod_moreinfo">
+<div class="mod_arturl">{$REVOCATION_TITLE}&nbsp;{$REVOCATION_LINK}</div>
+<div class="mod_arturl">{$AGB_TITLE}&nbsp;{$AGB_LINK}</div>
+</div>
+{/if}
+</div>

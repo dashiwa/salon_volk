@@ -1,0 +1,135 @@
+{config_load file="$language/lang.conf" section="index"}
+{config_load file="$language/lang.conf" section="boxes"}
+<h1 class="cat_name str">{$CATEGORIES_NAME}</h1>
+
+{if $MANUFACTURERS_DESCRIPTION}
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="main" align="left">
+	{$MANUFACTURERS_DESCRIPTION}
+    </td>
+  </tr>
+</table>
+
+{/if}
+{if $MANUFACTURER_SORT}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+  <td class="main" align="left">
+	 <div class="info bl">Производитель: {$MANUFACTURER_SORT}</div>
+    </td>
+  </tr>
+</table>
+
+
+{/if}
+{if $CATEGORIES_NAME}
+
+
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+    <tr>
+<td >
+
+                                                             <div class="cat-prod-page">
+				<form id="prod-soft-menu">
+				        <input type="hidden" name="select value" />
+				       <select name="sel-pages" size="1" onchange="top.location.href = this.options[this.selectedIndex].value;">
+				            <option selected value="#">{#text_sort#}</option>
+				            <option value="{$LINK_sort_name_asc}">{#text_sort_name_asc#}</option>
+				            <option value="{$LINK_sort_name_desc}">{#text_sort_name_desc#}</option>
+				            <option value="{$LINK_sort_price_asc}">{#text_sort_price_asc#}</option>
+				            <option value="{$LINK_sort_price_desc}">{#text_sort_price_desc#}</option>						
+				      </select>
+				</form>
+		                </div>
+</td >
+ <td align="right" >
+                                                           <div class="cat-prod-page">
+				<form id="prod-soft-menu">
+				        <input type="hidden" name="select value" />
+				       <select name="sel-pages" size="1" onchange="top.location.href = this.options[this.selectedIndex].value;">
+				            <option selected value="#">{#text_products_per_page#}</option>
+				            <option value="{$LINK_PAGE}10">10</option>
+				            <option value="{$LINK_PAGE}20">20</option>
+				            <option value="{$LINK_PAGE}50">50</option>
+				            <option value="{$LINK_PAGE}100">100</option>						
+				      </select>
+				</form>
+		                </div>
+</td >
+    </tr>
+</table>
+{/if}
+<!--Подбор по параметрам -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" >
+  <tr> 
+  <td class="main" align="left">
+{$param_filter}
+ </td>
+  </tr>
+</table>
+<!--/Подбор по параметрам -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+  {foreach name=aussen item=module_data from=$module_content}
+  {php} $col++;
+  {/php}
+<td class="mod_cel5">
+<div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td class="product_name center" colspan="2" height="40"><a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></td>
+  </tr>
+  <tr>
+    <td height="80" class="product_image">
+      <div align="center"></div>
+      <p>{if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" title="{$module_data.PRODUCTS_NAME}" /></a>{/if}</p></td>
+    
+  </tr>
+   <tr>
+    <td   height="25">
+          <div class="product_price_2"> 
+             <div align="center">
+                  {$module_data.PRODUCTS_PRICE}{if $module_data.PRODUCTS_VPE}
+                  {$module_data.PRODUCTS_VPE}{/if} {if $module_data.PRODUCTS_SHIPPING_LINK}
+                  {$module_data.PRODUCTS_SHIPPING_LINK}{/if}
+            </div>    
+       </div>
+   </div>
+   <div align="center">{if $module_data.PRODUCTS_TAX_INFO}</div>
+   <div class="product_vpe">{$module_data.PRODUCTS_TAX_INFO}</div>{/if}    </td>
+  </tr>
+</table>
+</div>
+ </div></div></div></div></div></div></div></div> 
+
+</td>
+  {php}
+  if ($col>=3) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}
+    </tr>
+  </table>
+<br/>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center" valign="middle">
+
+<div class="clear"></div>
+<div class="navigation">
+<span class="right">{$NAVIGATION}</span>{$NAVIGATION_PAGES}</div>
+<div class="clear"></div>
+</td>
+</tr>
+</table>
+
+{if $CATEGORIES_DESCRIPTION}<br /><div class="mod_space">
+{$CATEGORIES_DESCRIPTION}{/if}<br />{if $CATEGORIES_IMAGE}
+<br /></div>
+
+{/if}

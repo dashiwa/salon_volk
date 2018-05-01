@@ -1,0 +1,27 @@
+{config_load file="$language/lang.conf" section="reviews"}
+<div class="mod_news">
+
+
+{foreach name=aussen item=module_data from=$module_content}
+<div class="mod_space"><div class="mod_corner">
+    <div class="mod_time">{$module_data.DATE}</div>
+    <div class="mod_artautor">{#text_author#} {$module_data.AUTHOR}</div>
+    <div class="mod_info">{#text_rating#} {$module_data.RATING}</div>
+    <div class="brspace"></div><div class="brspace"></div>
+    <div class="cooment_info">{$module_data.TEXT}</div>
+</div></div>
+{/foreach}
+
+{if $TEXT_FIRST_REVIEW != ''}
+<div class="info">{$TEXT_FIRST_REVIEW}</div>
+{/if}
+<div class="mod_space">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td></td>
+    <td><span class="imgs right">{$BUTTON_NEW}{$BUTTON_WRITE}</span></td>
+  </tr>
+</table>
+<div>
+<div class="brspace"></div>
+</div></div></div>

@@ -1,0 +1,22 @@
+{config_load file="$language/lang.conf" section="faq"}
+<div class="block"> 
+		<div class="blueblock_header"><h3>{#heading_text#}</h3></div> 
+		  <div class="block_center"><div class="block_centertxt"> 
+			<ul class="list"> 
+<table width="95%"  border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td class="blockTitle">
+  {foreach name=aussen item=module_data from=$module_content}
+		{$module_data.FAQ_DATA}
+		<div style="padding-left:1em">
+		<strong><a href="{$module_data.FAQ_LINK_MORE}">{$module_data.FAQ_QUESTION}</a></strong><br />
+		{$module_data.FAQ_ANSWER|truncate:$smarty.const.MAX_DISPLAY_FAQ_ANSWER:" ..."}
+		</div>
+  {/foreach}  
+          </td>
+        </tr>
+    </table>
+			</ul> 
+			</div></div> 
+		  <div class="block_bot"></div> 
+</div>

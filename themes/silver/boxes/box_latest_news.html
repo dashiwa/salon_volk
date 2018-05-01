@@ -1,0 +1,22 @@
+{config_load file="$language/lang.conf" section="boxes"}
+<div class="block"> 
+          <div class="greenblock_header"><h3>{#heading_news#}</h3></div> 
+		  <div class="block_center"> 
+			 <div class="leftmenu"> 
+				<ul class="list">
+<table width="95%"  border="0" cellpadding="2" cellspacing="0">
+        <tr>
+          <td class="blockTitle">
+  {foreach name=aussen item=module_data from=$module_content}
+		<br /><em>{$module_data.NEWS_DATA}</em>
+		<strong><a href="{$module_data.NEWS_LINK_MORE}">{$module_data.NEWS_HEADING}</a></strong><br />
+		{$module_data.NEWS_CONTENT|os_truncate:$smarty.const.MAX_DISPLAY_LATEST_NEWS_CONTENT:" ..."}<br />
+  {/foreach}  
+          </td>
+        </tr>
+    </table> 
+		       </ul>
+			 </div> 
+		  </div> 
+		  <div class="block_bot"></div> 
+</div>

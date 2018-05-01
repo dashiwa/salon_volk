@@ -1,0 +1,45 @@
+{config_load file="$language/lang.conf" section="gift_cart"}
+{config_load file="$language/lang.conf" section="boxes"}
+{if $ACTIVATE_GIFT=='true'}
+{$FORM_ACTION}
+<div class="gift">
+<div align="center">
+<div><b>{#title#}</b></div>
+{if $GV_AMOUNT neq ''}
+<div align="center">
+{#text_info#}<br />
+{#voucher_balance#} <b>{$GV_AMOUNT}</b><br />
+{#text_send_to_friend#} <a class="a_more" href="{$GV_SEND_TO_FRIEND_LINK}">{#box_send_to_friend#}</a>
+</div>
+{/if}
+{if $COUPON_AMOUNT2 neq ''}
+<div align="center">
+{#voucher_redeemed#} <b>{$COUPON_AMOUNT2}</b>
+</div>
+{/if}
+{if $COUPON_HELP_LINK neq ''}
+<div align="center">
+{#cart_coupon#} {$COUPON_HELP_LINK} {#cart_coupon_info#}</a>
+</div>
+{/if}
+{if $C_FLAG == 'true'}
+<div align="center">
+<b>{#text_gift#}</b>
+            <table border="0" cellpadding="2" cellspacing="0">
+				<tr>
+					<td>{#text_code#}</td>
+					<td>{$INPUT_CODE}</td>
+					<td>{$BUTTON_SUBMIT}</td>
+				</tr>
+			</table>
+</div>
+{else}
+<div align="center">
+<b>{#create_account#}</b><br />
+<a class="a_more" href="{$LINK_ACCOUNT}">{#text_register#}</a>
+</div>
+{/if}
+{$FORM_END}
+{/if}
+</div>
+</div>

@@ -1,0 +1,47 @@
+{config_load file="$language/lang.conf" section="latest_news"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td>
+<div class="modtit_news">{#heading_text#}</div>
+</td></tr></table>
+{if $ONE eq 1}
+{assign var="module_data" value=$module_content[0]}
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+<div class="mod_time">{$module_data.NEWS_DATA}</div>
+<div class="mod_newstitle"><a href="{$module_data.NEWS_LINK_MORE}">{$module_data.NEWS_HEADING}</a></div>
+<div class="mod_newscontent">{$module_data.NEWS_CONTENT}<br /><a class="a_more" href="{$NEWS_LINK}">{#other_news#}</a></div>
+</div></div>
+</div>
+{else}
+<div class="cont_tab">
+  <div class="mod_row">
+  {foreach name=aussen item=module_data from=$module_content}
+  {php} $col++;
+  {/php}
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+<div class="mod_time">{$module_data.NEWS_DATA}</div>
+<div class="mod_newstitle"><a href="{$module_data.NEWS_LINK_MORE}">{$module_data.NEWS_HEADING}</a></div>
+<div class="mod_newscontent">{$module_data.NEWS_CONTENT|os_truncate:$smarty.const.MAX_DISPLAY_LATEST_NEWS_CONTENT:" ..."}<br /><a class="a_more" href="{$NEWS_LINK}">{#other_news#}</a></div>
+</div></div>
+  {php} 
+  if ($col>=1) {
+  $col=0;
+  echo '</div><div class="mod_row">';
+  }
+  {/php}
+  {/foreach}  
+  </div>
+</div>
+<div class="brspace"></div><div class="brspace"></div>
+<div class="navigation">
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="navbar">{$NAVIGATION_BAR}</td>
+    <td class="navbar1">{$NAVIGATION_BAR_PAGES}</td>
+  </tr>
+</table>
+</div>
+</div>
+{/if}

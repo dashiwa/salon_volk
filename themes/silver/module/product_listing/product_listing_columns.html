@@ -1,0 +1,153 @@
+{config_load file="$language/lang.conf" section="index"}
+{config_load file="$language/lang.conf" section="boxes"}
+
+{if $MANUFACTURERS_DESCRIPTION}<br />
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="main" align="left">
+	{$MANUFACTURERS_DESCRIPTION}
+    </td>
+  </tr>
+</table>
+<br />
+{/if}
+{if $MANUFACTURER_SORT}
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tr>
+  <td class="main" align="left">
+	 <div class="info bl">Категории производителя: {$MANUFACTURER_SORT}</div>
+    </td>
+  </tr>
+</table>
+<br />
+
+
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+    <tr>
+<td >
+
+                                                             <div class="cat-prod-page">
+				<form id="prod-soft-menu">
+				        <input type="hidden" name="select value" />
+				       <select name="sel-pages" size="1" onchange="top.location.href = this.options[this.selectedIndex].value;">
+				            <option selected value="#">{#text_sort#}</option>
+				            <option value="{$LINK_sort_name_asc}">{#text_sort_name_asc#}</option>
+				            <option value="{$LINK_sort_name_desc}">{#text_sort_name_desc#}</option>
+				            <option value="{$LINK_sort_price_asc}">{#text_sort_price_asc#}</option>
+				            <option value="{$LINK_sort_price_desc}">{#text_sort_price_desc#}</option>						
+				      </select>
+				</form>
+		                </div>
+</td >
+ <td align="right" >
+                                                           <div class="cat-prod-page">
+				<form id="prod-soft-menu">
+				        <input type="hidden" name="select value" />
+				       <select name="sel-pages" size="1" onchange="top.location.href = this.options[this.selectedIndex].value;">
+				            <option selected value="#">{#text_products_per_page#}</option>
+				            <option value="{$LINK_PAGE}10">10</option>
+				            <option value="{$LINK_PAGE}20">20</option>
+				            <option value="{$LINK_PAGE}50">50</option>
+				            <option value="{$LINK_PAGE}100">100</option>						
+				      </select>
+				</form>
+		                </div>
+</td >
+    </tr>
+</table>
+
+
+
+{/if}  
+<!--Подбор по параметрам -->
+<table width="100%" border="0" cellspacing="0" cellpadding="4" >
+  <tr> 
+  <td class="main" align="left">
+{$param_filter}
+ </td>
+  </tr>
+</table>
+<!--/Подбор по параметрам --> 
+<table width="100%" border="0" cellspacing="0" cellpadding="4" >
+  <tr> 
+
+          {foreach name=aussen item=module_data from=$module_content} 
+  {php} $col++; 
+  {/php}
+    <td class="main" valign="top"><div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr">
+    
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr class="contentBoxContents1" valign="top">
+    <td height="90" class="contentBoxContents1" valign="top">
+      <table width="100%" cellpadding="0" cellspacing="0" border=0><tr>
+        <td valign="top">
+        <div class="prod-img"><div class="product_name">
+
+
+        {if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" title="{$module_data.PRODUCTS_NAME}" /></a>{/if}{if $module_data.PRODUCTS_FSK18=='true'}<br /><img src="{$tpl_path}img/fsk18.gif" alt="" />{/if}
+             </div>
+        </td>
+                                                  
+     <td width="100%" valign="top">
+     
+    <div class="product_name">
+ <a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></div>
+ 
+
+     {if $module_data.PRODUCTS_SHORT_DESCRIPTION}{$module_data.PRODUCTS_SHORT_DESCRIPTION|os_truncate:170}<br />
+     
+     <a href="{$module_data.PRODUCTS_LINK}">{#text_more#}</a><br />{/if}
+
+      <br />
+
+            <div class="product_price_2">
+<strong>{$module_data.PRODUCTS_PRICE} </strong><br /></div>
+
+            {$module_data.PRODUCTS_TAX_INFO}{$module_data.PRODUCTS_SHIPPING_LINK} 
+            {if $module_data.PRODUCTS_VPE}<br />{$module_data.PRODUCTS_VPE}{/if} 
+<br />
+{if $module_data.PRODUCTS_SHIPPING_NAME}
+                          <table width="200" border="1" cellpadding="0" cellspacing="0">
+                            <tr valign="middle">
+                              <td class="main" align="right">{#text_shippingtime#}</td>
+                              {if $module_data.PRODUCTS_SHIPPING_IMAGE}
+                              <td><img src="{$module_data.PRODUCTS_SHIPPING_IMAGE}" alt="{$module_data.PRODUCTS_SHIPPING_NAME}" /></td>
+                              {/if}
+                              <td class="main" align="left">&nbsp;{$module_data.PRODUCTS_SHIPPING_NAME}</td>
+                            </tr>
+                          </table>
+                          {/if}
+     
+     </td>
+     </tr>
+    </table>
+   
+</td></div>
+
+
+  </tr>
+</table>    
+   
+ </div></div></div></div></div></div></div></div> 
+</td>
+  {php} 
+  if ($col>=1) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}  
+
+  </tr>
+  
+<tr>
+<td align="center" valign="middle">
+
+<div class="clear"></div>
+<div class="navigation">
+<span class="right">{$NAVIGATION}</span>{$NAVIGATION_PAGES}</div>
+<div class="clear"></div>
+</td>
+</tr>
+</table>

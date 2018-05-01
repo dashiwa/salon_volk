@@ -1,0 +1,37 @@
+ {if $FREE_SHIPPING}
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="leftdist">&nbsp;</td>
+    <td width="100%"> <table border="0" width="100%" cellspacing="0" cellpadding="3">
+        <tr> 
+          <td colspan="2"><b>{$FREE_SHIPPING_TITLE}</b>&nbsp;{$FREE_SHIPPING_ICON}</td>
+        </tr>
+        <tr>
+          <td class="leftdist">&nbsp;</td>
+          <td width="100%">{$FREE_SHIPPING_DESCRIPTION}</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+{else} 
+<table class="mod_table" bordercolor="#dddddd" border="1" width="100%" cellspacing="1" cellpadding="4">
+  {foreach name=aussen item=module_data from=$module_content}
+        <tr class="tr">
+          <td colspan="3">{$module_data.icon}<b>{$module_data.module}</b></td>
+        </tr>
+        {if $module_data.error != ''}
+        <tr> 
+          <td colspan="3"><div class="info">{$module_data.error}</div></td>
+        </tr>
+        {else}
+        {foreach name=aussen item=method_data from=$module_data.methods}
+        <tr>
+          <td width="1">{$method_data.radio_field}</td>
+          <td width="">{$method_data.title}</td>
+          <td width="100px" align="right"><b>{$method_data.price}</b></td>
+        </tr>
+        {/foreach}
+        {/if}
+  {/foreach}
+</table>
+{/if}

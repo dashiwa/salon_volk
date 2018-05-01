@@ -1,0 +1,53 @@
+{config_load file="$language/lang.conf" section="categorie_listing"}
+<div class="3mod_news">
+<table width="100%" cellpadding="0" cellspacing="4" border=0>
+<tr><td class="cat_name str">
+<div class="modtit_feat">{$CATEGORIES_NAME}</div>
+</td></tr></table>
+
+
+<div class="brspace"></div>
+{if $module_content !=''}
+
+
+
+ <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+    <tr>
+{foreach name=aussen item=module_data from=$module_content}
+  {php}
+  $col++;
+  {/php}
+<td class="mod_cel3 " ><div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr"> 
+
+ <div class="product_name center"><a href="{$module_data.CATEGORIES_LINK}">{$module_data.CATEGORIES_NAME}</a></div>
+   {if $module_data.CATEGORIES_DESCRIPTION}{/if}
+   
+   </div></div></div></div></div></div></div></div> 
+</td>
+</div> 
+  {php}
+  if ($col>=3) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}
+    </tr>
+  </table>
+<br />
+{if $CATEGORIES_DESCRIPTION}
+<div class="mod_space">
+
+  <table width="100%" border="0">
+  <tr>
+    <td><img  class="imgcat" align="left" src="{$CATEGORIES_IMAGE}" alt="{$CATEGORIES_NAME}" />{if $CATEGORIES_IMAGE}{/if}
+{$CATEGORIES_DESCRIPTION} </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</div></div></div>
+{/if}
+{/if}
+</div>
+{$MODULE_featured_products}
+{$MODULE_new_products}

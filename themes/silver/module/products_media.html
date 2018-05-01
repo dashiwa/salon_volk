@@ -1,0 +1,21 @@
+{config_load file="$language/lang.conf" section="products_media"}
+<div class="mod_space"><div class="mod_corner">
+<table class="mod_table" width="100%" border="1" bordercolor="#dddddd" cellpadding="4" cellspacing="1">
+      <tr>
+        <td align="left" colspan="2"><b>{#file#}</b></td><td colspan="2"><b>{#size#}</b></td>
+      </tr>
+	   {foreach name=aussen item=module_data from=$module_content}
+      <tr>
+        <td width="1">{$module_data.ICON}</td>
+        <td>{$module_data.FILENAME}</td>
+        <td>{$module_data.FILESIZE}</td>
+        <td width="1"><span class="imgs">{$module_data.BUTTON}</span></td>
+      </tr>
+      {if $module_data.DESCRIPTION}
+      <tr>
+        <td colspan="4" align="left">{$module_data.DESCRIPTION}</td>
+      </tr>
+      {/if}
+	  {/foreach}
+</table>
+</div></div>

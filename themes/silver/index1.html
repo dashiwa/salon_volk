@@ -1,0 +1,244 @@
+﻿{config_load file="$language/lang.conf" section="index"}
+<!--[if lt IE 7]>
+<script type="text/javascript" src="/js/unitpngfix/unitpngfix.js"></script>
+<![endif]--> 
+<body> 
+ <div class="base">
+   <div align="1center"> 
+   <div class="1page"> 
+ 
+<div class="1topbg"> 
+    	
+	<table width="100%" cellpadding="7" cellspacing="0" border="0" class="ss_center1"> 
+   <tr> 
+	<td align="center" width="240">Каталог Товаров и Услуг</td> 
+ <!-- Верхнее меню -->
+	<td align="center">
+      <a href="{$mainpage}">{#text_mainpage#}</a><span class="delm"> |</span>
+      <a href="news.php">Новости</a><span class="delm"> |</span>
+      <a href="articles.php">Статьи</a><span class="delm"> |</span>
+      
+      <a href="{$checkout}">Обратная связь</a>
+</td> 
+ <!--/Верхнее меню -->
+ 
+ 
+<td align="right" >
+<div class="login-box">
+ 
+ <!--Мои данные -->
+{if $account}{if $smarty.session.customer_id}
+<a href="{$account}">{#link_account#}</a><span class="delm">| </span>
+{/if}{/if}
+ <!--/Мои данные -->
+ 
+ <!--Вход-->	
+	{if $account}{if $smarty.session.customer_id}
+ <a href="{$logoff}">{#link_logoff#}</a>
+  {else}
+ <a href="{$login}">{#link_login#}</a>
+{/if}
+{/if}   
+  </div>	
+  </td> 
+<!--/Вход -->	
+	
+   </tr> 
+   </table> 
+ 
+   
+   <table width="100%" cellpadding="5" cellspacing="0" border="0" class="ss_center"> 
+   <tr> 
+	<td align="left" width="250">
+	
+<!-- Лого -->
+	<div class="logo"><a title="SHOPOS" href="/"><img src="{$tpl_path}img/logo.png" alt="SHOPOS" /></a></div>
+<!--/ Лого -->
+	</td> 
+	
+	<td width="75%" valign="middle" align="left" >
+
+ <table width="98%" cellpadding="0" cellspacing="0" border="0"  class="mod_corner1" > 
+   <tr> 
+	<td align="left" class="poisk">	
+
+ <!-- Поиск -->	
+	<div class="c-top ">
+			{$box_SEARCH}
+	   <div class="clear"></div>
+	</div>
+ <!--/ Поиск -->
+
+  </td> 
+ <!--/Контейнер отображения региона -->
+  <td align="center" width="165" > Регион:</br> <div class="cat_name" id="cat_name">{$zone}</div> </td>   
+ <!--/Контейнер отображения региона -->
+    </tr> 
+     </table> 
+
+   <table width="98%" cellpadding="9" cellspacing="0" border="0" > 
+   <tr> 
+	<td align="left" >	
+ <!--Центральное меню-->
+	<div class="cat_name">Выбираем >>
+	<a href="index.php?cat=28"> ТОВАРЫ</a> <span class="delm"> | </span>
+	<a href="index.php?cat=21"> УСЛУГИ </a>
+	</div> 
+ <!--/Центральное меню-->
+	</td> 
+  
+ <!--Контейнер выбора региона --> 
+  <td align="center" width="150"> <div class="login-box"><a href="shop_content.php?coID=2">Выбрать регион</a></div>	</td>   
+ <!--/Контейнер выбора региона -->
+	</tr> 
+   </table> 
+		
+	</td>
+    </table> 
+    </div> 
+ 
+
+<!--Хлебные крошки-->
+ <table width="100%" cellpadding="0" cellspacing="0" class="1ss_center1"> 
+    <tr> <td class="speedbar_center" align="left">{$navtrail}</td> </tr> 
+ </table> 
+<!--/Хлебные крошки-->
+ 
+<table width="100%" class="ss_center" cellpadding="0" cellspacing="0" border=0> 
+<tr valign="top"> 
+	<td class="content_left" align="left"> 
+	<div class="left_block"> 
+
+{$box_CATEGORIES}
+{$box_vote}
+{$uni_box}
+{$box_CURRENCIES}
+{$box_CONTENT}
+{$box_INFORMATION}
+{$box_ADD_QUICKIE}
+{$box_LAST_VIEWED}
+{$box_REVIEWS}
+{$box_SPECIALS}
+{$box_FEATURED}
+{$box_AUTHORS}
+{$box_MANUFACTURERS_INFO}
+
+{$box_ADMIN}
+{$box_ARTICLES}
+{$box_userinfo}
+{$box_ORDER_HISTORY}
+{$box_DOWNLOADS}
+{$box_AFFILIATE}
+{$box_WHATSNEW}
+{$box_NEWSLETTER}
+
+{$box_INFOBOX}
+
+{$box_LANGUAGES}
+
+{$box_FAQ}
+	</div> 
+ 
+	</td><!-- /content_left --> 
+ 
+ 
+	<td class="content_center" align="left"> 
+ 
+	   <div class="center_block"> 
+
+	   
+<table width="100%" cellspacing="0" cellpadding="0" border=0> 
+
+<tr> 
+   <td class="1ss_center">{$text}{$main_content} </td> 
+</tr> 
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border=0> 
+             <tr> 
+	            <td class="zzznav_left" align="left"></td> 
+	            <td class="zzznav_center" align="left">&nbsp;</td> 
+	            <td class="zzznav_right" align="left"></td> 
+          </tr></table> 
+ 
+       </div> 
+	</td><!-- /content_center --> 
+ 
+ 
+	
+ 
+</tr> 
+ 
+
+</table> 
+ 
+</div><!-- /page --> 
+ 
+ 
+<table width="100%" cellpadding="0" cellspacing="0" border=0> 
+<tr> 
+	<td class="footer_left" align="left"><div class="copy">© 2011</div></td> 
+	<td class="footer_center" align="left"> 
+	   <div class="copy"> 
+	  
+	    </div> 
+	</td> 
+	<td class="footer_right" align="left"> 
+	   <div class="copy"> 
+ 
+	    </div> 
+	</td> 
+</tr> 
+</table> 
+<table cellspacing="10" cellpadding="0" width="100%">
+<tr  align="center"><td> 
+{literal}
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t11.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+{/literal}
+</td>
+<td>{literal}
+<!-- catalog.tut.by code begin -->
+<a href="http://catalog.tut.by/">
+<img src="http://catalog.tut.by/images/catalog-tut4.gif" border=0 width=88 height=31 alt="Каталог TUT.BY"></a>
+<!-- catalog.tut.by code end -->
+{/literal}
+</td>
+<td>{literal}
+<!--Akavita counter start-->
+<script type="text/javascript">var AC_ID=47489;var AC_TR=false;
+(function(){var l='http://adlik.akavita.com/acode.js'; var t='text/javascript';
+try {var h=document.getElementsByTagName('head')[0];
+var s=document.createElement('script'); s.src=l;s.type=t;h.appendChild(s);}catch(e){
+document.write(unescape('%3Cscript src="'+l+'" type="'+t+'"%3E%3C/script%3E'));}})();
+</script><span id="AC_Image"></span>
+<noscript><a target='_top' href='http://www.akavita.by/'>
+<img src='http://adlik.akavita.com/bin/lik?id=47489&it=1'
+border='0' height='1' width='1' alt='Akavita'/>
+</a></noscript>
+<!--Akavita counter end-->
+{/literal}
+</td>
+<td>{literal}
+<!-- BEGIN Rating All.BY CODE - ALTERNATING THIS CODE WILL CAUSE TERMINATION ACCOUNT-->
+<A HREF="http://www.all.by/">
+<IMG SRC="http://www.all.by/cgi-bin/rating.cgi?id=10082068&amp;ni=1" BORDER="0" WIDTH="88" HEIGHT="31" ALT="Rating All.BY"></A>
+<!-- END Rating All.BY CODE-->
+{/literal}
+</td>
+</table>
+
+
+
+</div> 
+</div> 
+</body> 
+</html>

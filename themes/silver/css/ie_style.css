@@ -1,0 +1,18 @@
+*:first-child+html .header {
+	height: 105px;
+	margin: 0px;
+	padding: 0px;
+}
+*:first-child+html #text {
+	margin-top: 10px;
+}
+*:first-child+html #top-nav {
+	margin: 0px;
+	padding: 0px;
+}
+*:first-child+html .news-c .news-r {
+	background: url(../images/conntent-r.jpg) top right;
+	background-repeat: no-repeat;
+	height: 42px;
+	padding-right: 15px;
+}

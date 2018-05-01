@@ -1,0 +1,86 @@
+{config_load file="$language/lang.conf" section="address_book_process"}
+<div class="mod_space">
+<div class="mod_corner">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="mod_tdb"><strong>{#title_address#}</strong> </td>
+    <td align="right" class="red">{#text_must#}</td>
+  </tr>
+  {if $gender=='1'}
+  <tr>
+    <td><label for="gender" title="{$ENTRY_GENDER_ERROR}">{#text_gender#}</label></td>
+    <td><table cellspacing="0" cellpadding="0">
+      <tr>
+        <td>
+          {$INPUT_MALE}</td>
+        <td>
+          {$INPUT_FEMALE}</td>
+      </tr>
+    </table></td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_tdb"><label for="firstname" title="{$ENTRY_FIRST_NAME_ERROR}">{#text_firstname#}</label></td>
+    <td>{$INPUT_FIRSTNAME}</td>
+  </tr>
+{if $secondname=='1'}
+  <tr>
+    <td class="mod_tdb">{#text_secondname#}</td>
+    <td>{$INPUT_SECONDNAME}</td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="mod_tdb"><label for="lastname" title="{$ENTRY_LAST_NAME_ERROR}">{#text_lastname#}</label></td>
+    <td>{$INPUT_LASTNAME}</td>
+  </tr>
+  {if $company=='1'}
+  <tr>
+    <td class="mod_tdb">{#text_company#}<br /> </td>
+    <td>{$INPUT_COMPANY}</td>
+  </tr>
+  {/if}
+  {if $street_address=='1'}
+  <tr>
+    <td class="mod_tdb"><label for="address" title="{$ENTRY_STREET_ADDRESS_ERROR}">{#text_street#}</label></td>
+    <td>{$INPUT_STREET}</td>
+  </tr>
+  {/if}
+  {if $suburb=='1'}
+  <tr>
+    <td class="mod_tdb">{#text_suburb#}</td>
+    <td>{$INPUT_SUBURB}</td>
+  </tr>
+  {/if}
+  {if $postcode=='1'}
+  <tr>
+    <td class="mod_tdb"><label for="postcode" title="{$ENTRY_POST_CODE_ERROR}">{#text_code#}</label></td>
+    <td>{$INPUT_CODE}</td>
+  </tr>
+  {/if}
+  {if $city=='1'}
+  <tr>
+    <td class="mod_tdb"><label for="city" title="{$ENTRY_CITY_ERROR}">{#text_city#}</label></td>
+    <td>{$INPUT_CITY}</td>
+  </tr>
+  {/if}
+  {if $country=='1'}
+  <tr>
+    <td class="mod_tdb"><label for="country" title="{$ENTRY_COUNTRY_ERROR}">{#text_country#}</label></td>
+    <td>{$SELECT_COUNTRY}{$SELECT_COUNTRY_NOSCRIPT}</td>
+  </tr>
+  {/if}
+  {if $state=='1'}
+  <tr>
+    <td class="mod_tdb"><label for="state" title="{$ENTRY_STATE_ERROR_SELECT}">{#text_state#}</label></td>
+    <td><span id="stateXML">{$INPUT_STATE}</span></td>
+  </tr>
+  {/if}
+  {if $new=='1'}
+  <tr>
+    <td></td>
+    <td>{$CHECKBOX_PRIMARY} {#text_standard#}</td>
+  </tr>
+  {/if}
+</table>
+ </div>
+</div>

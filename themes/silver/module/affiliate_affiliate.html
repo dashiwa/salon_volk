@@ -1,0 +1,51 @@
+{config_load file="$language/affiliate.conf" section="affiliate_affiliate"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_affil">{#heading_title#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+{if $info_message neq ''}
+<div class="info">{$info_message}</div>
+{/if}
+<div class="mod_space">{$FORM_ACTION}
+<table width="100%" cellpadding="0" cellspacing="10">
+  <tr>
+    <td class="mod_td3">
+    <div class="mod_corner" id="myBox">
+    <b>{#heading_new_affiliate#}</b><br />
+    {#text_new_affiliate#}<br />
+    {#text_affiliate_introduction#}<br />
+    {$LINK_TERMS}{#text_new_affiliate_terms#}<br />
+    <div><span class="imgs">{$LINK_SIGNUP}</span></div>
+    </div>
+    </td>
+    <td class="mod_td3">
+<div class="mod_corner" id="myBox">
+      <b>{#heading_returning_affiliate#}</b><br />
+      {#text_returning_affiliate#}<br />
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="mod_tdb">{#text_affiliate_id#}</td>
+          <td>{$INPUT_AFFILIATE_USERNAME}</td>
+        </tr>
+        <tr>
+          <td class="mod_tdb">{#text_affiliate_password#}</td>
+          <td>{$INPUT_AFFILIATE_PASSWORD}</td>
+        </tr>
+        <tr>
+          <td class="mod_tdb"></td>
+          <td class="mod_td2">{$BUTTON_LOGIN}</td>
+        </tr>
+        <tr>
+          <td class="mod_tdb"></td>
+          <td>{$LINK_PASSWORD_FORGOTTEN}{#text_affiliate_password_forgotten#}</td>
+        </tr>
+      </table>
+       <br />
+      </div>
+    </td>
+  </tr>
+</table>
+</form>
+ </div>
+</div>

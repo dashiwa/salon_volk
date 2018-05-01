@@ -1,0 +1,43 @@
+{config_load file="$language/affiliate.conf" section="affiliate_banners"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_affil">{#heading_title#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+<div class="info">{#text_information#}</div>
+
+<div class="mod_space">
+<div class="mod_corner" id="myBox">
+{#text_affiliate_individuel_banner#}&nbsp;{$affiliate_banners_title}{#text_affiliate_individual_banner_info#}
+<table>
+  <tr>
+    <td>{$FORM_ACTION}{$INPUT_BANNER_ID}</td>
+    <td>{$BUTTON_SUBMIT}</form></td>
+  </tr>
+</table>
+</div>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+   <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="2">
+          {if $TEXTAREA_AFFILIATE_BANNER1 neq ''}
+          <tr>
+            <td align="center">{$link}</td>
+          </tr>
+          <tr>
+            <td align="center">{#text_affiliate_info#}</td>
+          </tr>
+          <tr>
+            <td align="center">{$TEXTAREA_AFFILIATE_BANNER1}</td>
+          </tr>
+          {/if}
+     </table>
+     </td>
+   </tr>
+   {if $banner_table_content neq ''}
+	 {$banner_table_content}
+   {/if}
+</table>
+</div>
+</div>

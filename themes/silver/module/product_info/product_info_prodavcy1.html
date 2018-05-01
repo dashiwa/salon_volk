@@ -1,0 +1,182 @@
+{config_load file="$language/lang.conf" section="product_info"}
+<script type="text/javascript" src="themes/silver/javascript/tab.js"></script>
+<script type="text/javascript" src="themes/grin/javascript/highslide/highslide-with-gallery.js"></script>
+<script type="text/javascript" src="themes/grin/javascript/highslide/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="themes/grin/javascript/highslide/highslide.css" />
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="themes/grin/javascript/highslide/highslide-ie6.css" />
+<![endif]-->
+{$FORM_ACTION}
+<div class="mod_news">
+<div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr"> 
+<table width="100%" cellpadding="5" cellspacing="0" border="0">
+<tr><td>
+<!-- Название продавца -->
+<div class="cat_name">{$PRODUCTS_NAME}</div>
+<!--/Название продавца -->
+</td></tr></table>
+<div class="hr"></div>
+<!-- Шапка товара -->
+<div class="mod_space">
+
+<table border="0" cellpadding="5" cellspacing="0" style="width: 100%;">
+	<tbody>
+  <tr>
+	<td width="200">
+ <!-- Фото -->
+	<div class="product_image">
+     {if $PRODUCTS_IMAGE or $PRODUCTS_MO_IMAGES or $PRODUCTS_IMAGE_LINK!=''}
+     {if $PRODUCTS_POPUP_LINK!=''}<a id="thumb1" href="{$PRODUCTS_POPUP_IMAGE}" onclick="return hs.expand(this, config1)" class="highslide" title="{$PRODUCTS_NAME}" {if $PRODUCTS_MO_IMAGES}rel="gallery-plants"{/if} target="_blank">{/if}<img src="{$PRODUCTS_IMAGE}" alt="{$PRODUCTS_NAME}" />{if $PRODUCTS_POPUP_LINK!=''}</a>{/if}
+     {/if}
+    </div>     
+<!--/Фото -->
+   </td>
+</div>			
+	<td>
+ <!--Контейнер для контактных данных -->
+{if $param_address}<b>Адрес: </b> {$param_address}</br>{/if}
+{if $param_mode}<b>Режим работы:</b> {$param_mode}</br>{/if}
+{if $param_phone}<b>Контакты: </b>{$param_phone}</br>{/if}
+{if $param_email}<b>E-mail:</b> {$param_email} </br>{/if}
+{if $param_site}<b>Сайт:</b>  {$param_site}</br>{/if}
+</br>
+
+{if $param_registration}<div class="fs11">{$param_registration}</div>{/if}
+<!--/Контейнер для контактных данных -->
+
+ {if $PRODUCTS_TAX_INFO}<div class="mod_tax">{$PRODUCTS_TAX_INFO}</div>{/if}
+     
+	{if $MODULE_products_media != ''}
+     {$MODULE_products_media}
+     {/if}
+
+   {if $MODULE_product_options !=''}
+   {$MODULE_product_options}
+   {/if}
+   {if $MODULE_graduated_price !=''}
+   {$MODULE_graduated_price}
+   {/if}
+
+				</td>
+			
+		</tr>
+	</tbody>
+</table>
+ 
+ <div class="left_block"> </div>
+ <!--Табы -->
+ <div class="section">
+  <ul class="tabs">
+  {if $PRODUCTS_DESCRIPTION}
+    <li  class="current">О нас</li>
+	{/if}
+	{if $products_array}
+    <li>Товары в каталоге ({$products_array_count})</li>
+	{/if}
+	{if $PRODUCTS_MO_IMAGES}<li>Фото ({$mo_img_count})</li>{/if}
+	{if $param_video}<li>Видео</li>{/if}
+	{if $param_directions}
+	<li>Схема проезда</li>
+	{/if}
+	<li>Отзывы ({$reviews_count})</li>
+  </ul>
+   
+   {if $PRODUCTS_DESCRIPTION}
+ <!--Таб Описание -->
+  <div class="box visible">
+    {if $PRODUCTS_DESCRIPTION !=''}
+<div class="mod_space">
+ 
+  <div class="mod_space">
+  {$PRODUCTS_DESCRIPTION}
+  </div>
+{/if}
+</div>
+  </div>
+ <!--/Таб Описание --> 
+ {/if}
+ 
+ {if $products_array}
+ <!--Таб Товары -->
+ <div class="box">
+   {if $products_array}
+   {foreach name=aussen item=products_array from=$products_array}
+     &nbsp; - <a href="{$products_array.url}"><strong>{$products_array.name}</strong></br>
+   {/foreach}
+   {else}
+     нет товаров
+   {/if}
+ </div>
+ <!--/Таб Товары -->
+ {/if}
+ 
+  {if $PRODUCTS_MO_IMAGES}
+ <!--Таб Фото -->
+  <div class="box">     
+
+     <table width="200" cellspacing="0" cellpadding="2" border="0">
+      <tr>
+  {foreach name=mo_pic item=img_values from=$mo_img}
+  {php} $col++;
+  {/php}
+  <td>
+   <div align="center">
+  {if $img_values.PRODUCTS_MO_POPUP_LINK !=''}<a href="{$img_values.PRODUCTS_MO_POPUP_IMAGE}" title="{$PRODUCTS_NAME}" onclick="return hs.expand(this, config1)" class="highslide" rel="gallery-plants" target="_blank">{/if}<img src="{$img_values.PRODUCTS_MO_IMAGE}" alt="{$PRODUCTS_NAME}" width="100%" />{if $img_values.PRODUCTS_MO_POPUP_LINK !=''}</a>{/if}
+   </div>
+  </td>
+  {php}
+  if ($col>=3) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}
+      </tr>
+    </table>
+   </div>
+ <!--/Таб Фото -->
+ {/if}
+    {if $param_video}
+   <div class="box">
+     <br><b>Видео:</b><br>
+     {$param_video}
+	 </div>
+  {/if}
+ {if $param_directions}
+ <!--Таб Схема проезда -->
+ <div class="box">
+  {$param_directions}
+ </div>
+ <!--/Таб Схема проезда -->
+{/if} 
+ <!--Таб Отзывы -->
+ <div class="box">
+  {if $MODULE_products_reviews != ''}
+{$MODULE_products_reviews}
+{/if}
+ </div>
+ <!--/Таб Отзывы -->
+ 
+
+ </div> 
+  </div><!-- .section -->
+ <!--/Табы -->
+</div></div></div></div></div></div></div></div> 
+
+ <div class="mod_space">{$PRODUCT_NAVIGATOR}</div>
+
+
+
+{if $MODULE_cross_selling != ''}
+{$MODULE_cross_selling}
+{/if}
+{if $MODULE_reverse_cross_selling != ''}
+{$MODULE_reverse_cross_selling}
+{/if}
+
+{if $MODULE_also_purchased != ''}
+{$MODULE_also_purchased}
+{/if}
+  
+  
+{$FORM_END}

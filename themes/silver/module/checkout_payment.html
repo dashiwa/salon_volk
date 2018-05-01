@@ -1,0 +1,90 @@
+{config_load file="$language/lang.conf" section="checkout_payment"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_pay">{#heading_payment#}</div>
+</td><td class="mod_redright"></td></tr></table>
+{$FORM_ACTION}
+{if $error!=''}
+<div class="error">{$error}</div>
+{/if}
+{if $BILLING_ADDRESS=='true'}
+<div class="h2">{#title_address#}</div>
+<div class="hrspace"></div>
+<table width="100%" cellpadding="10" cellspacing="0">
+  <tr>
+    <td><div class="mod_space"><b>{#title_address#}</b><br />
+    {#text_address#}<br /><span class="imgs">{$BUTTON_ADDRESS}</span></div></td>
+    <td><div class="addres">{$ADDRESS_LABEL}</div></td>
+  </tr>
+</table>
+{/if}
+<div class="brspace"></div>
+<div class="h2">{#title_payment#}</div>
+<div class="hrspace"></div>
+<div class="mod_space">
+<div class="mod_corner">
+{if $GV_COVER!='true'}
+<table width="100%" cellspacing="1" cellpadding="4">
+<tr><td>{$PAYMENT_BLOCK}</td></tr>
+<tr><td>{$module_gift}</td></tr>
+</table>
+{else}
+<div class="info">{#text_gccover#}</div>
+{/if}
+</div>
+</div>
+
+<div class="brspace"></div>
+<div class="h2">{#title_comments#}</div>
+<div class="hrspace"></div>
+<div class="mod_space">
+<div class="mod_corner">
+<div align="center">{$COMMENTS}</div>
+</div>
+</div>
+{if $conditions=='true'}
+<div class="brspace"></div>
+<div class="h2">{#title_agb#}&nbsp;{$AGB_LINK}</div>
+<div class="hrspace"></div>
+<div class="mod_space">
+<div class="mod_corner">
+<div align="center">{$AGB}</div>
+</div>
+<div class="info">{$AGB_checkbox} {#text_accept_agb#}</div>
+</div>
+{/if}
+<div class="mod_space">
+ <div class="cont_tab">
+  <div class="mod_row ">
+    <div class="mod_cel">
+    <b>{#title_continue#}</b><div class="hrspace"></div>{#text_continue#}
+    </div>
+    <div class="mod_tdright"><span class="right">{$BUTTON_CONTINUE}</span></div>
+  </div>
+ </div>
+</div>
+{$FORM_END}
+<div class="statusbar">
+<div class="h2">Прогрес</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+          <tr>
+          <td width="25%"><center>1. {#text_shipping_info#}</center></td>
+          <td width="25%"><center><b>2. {#text_payment_info#}</b></center></td>
+          <td width="25%"><center>3. {#text_confirm#}</center></td>
+          <td width="25%"><center>4. {#text_finished#}</center></td>
+          </tr>
+</table>
+<div id="progressbar"></div>
+</div>
+</div>
+
+{literal}
+	<script type="text/javascript">
+	$(function() {
+		$("#progressbar").progressbar({
+			value: 50
+		});
+	});
+</script>
+{/literal}

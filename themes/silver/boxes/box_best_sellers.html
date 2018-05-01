@@ -1,0 +1,26 @@
+{config_load file="$language/lang.conf" section="boxes"}
+<div class="block"> 
+          <div class="greenblock_header"><h3>{#heading_best_sellers#}</h3></div> 
+		  <div class="block_center"> 
+			 <div class="leftmenu"> 
+				<ul class="list">
+<table width="100%" border="0" cellspacing="2" cellpadding="0">
+        {foreach name=aussen item=box_data from=$box_content}
+          <tr></tr>
+            <td style="border-bottom: 1px solid; border-color: #cccccc;" class="boxText"><table width="100%"  border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="boxText"><div align="center"><a href="{$box_data.PRODUCTS_LINK}">{$box_data.PRODUCTS_NAME}</a> </div></td>
+                </tr><tr>
+<td class="boxTextPrice" align="center"><img src="{$box_data.PRODUCTS_IMAGE}" width="101" height="94" /></td>
+</tr> <td height="30" align="right" class="boxTextPrice"><div align="center"><strong>{$box_data.PRODUCTS_PRICE}</strong>
+  
+</div></td>
+              </table>              </td>
+          </tr>
+        {/foreach}
+              </table> 
+		       </ul>
+			 </div> 
+  </div> 
+		  <div class="block_bot"></div> 
+</div>

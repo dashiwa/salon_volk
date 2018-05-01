@@ -1,0 +1,191 @@
+{config_load file="$language/lang.conf" section="product_info"}
+<script type="text/javascript" src="themes/silver/javascript/tab.js"></script>
+<script type="text/javascript" src="themes/grin/javascript/highslide/highslide-with-gallery.js"></script>
+<script type="text/javascript" src="themes/grin/javascript/highslide/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="themes/grin/javascript/highslide/highslide.css" />
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="themes/grin/javascript/highslide/highslide-ie6.css" />
+<![endif]-->
+{$FORM_ACTION}
+<div class="mod_news"><div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr"> 
+   <table width="100%" cellpadding="5" cellspacing="0" border="0">
+        <tr><td>
+                <!-- Название товара -->
+                <div class="cat_name">{$PRODUCTS_NAME}</div>
+                <!--/Название товара -->
+            <td align="right">
+                <!-- Навигатор -->
+                {$PRODUCT_NAVIGATOR}
+                <!--/Навигатор -->
+            </td>			
+			</td></tr></table>
+    <div class="hr"></div>
+	<!-- Шапка товара -->    
+	
+        
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                        <tbody>
+                                        <tr>
+                                        <td width="200">
+                                            <!-- Фото -->
+                                            <div class="product_image">
+                                                {if $PRODUCTS_IMAGE or $PRODUCTS_MO_IMAGES or $PRODUCTS_IMAGE_LINK!=''}
+                                                {if $PRODUCTS_POPUP_LINK!=''}<a id="thumb1" href="{$PRODUCTS_POPUP_IMAGE}" onclick="return hs.expand(this, config1)" class="highslide" title="{$PRODUCTS_NAME}" {if $PRODUCTS_MO_IMAGES}rel="gallery-plants"{/if} target="_blank">{/if}<img src="{$PRODUCTS_IMAGE}" alt="{$PRODUCTS_NAME}" />{if $PRODUCTS_POPUP_LINK!=''}</a>{/if}
+                                                {/if}
+                                            </div>     
+                                            <!--/Фото -->
+                                        </td>
+                                   			
+                                    <td>
+                                        <!-- Краткое описание товара -->			
+                                        <div class="mod_space">
+                                            {$PRODUCTS_SHORT_DESCRIPTION}
+                                        </div><br />
+                                        <!--/ Краткое описание товара -->
+
+                                        {if $PRODUCTS_TAX_INFO}<div class="mod_tax">{$PRODUCTS_TAX_INFO}</div>{/if}
+                                        <div class="mod_space">
+                                            <div class="1mod_manuf">Производитель: {$MANUFACTURER}</div> 
+                                            <div class="1mod_print">{#print#}&nbsp;{$PRODUCTS_PRINT}</div>
+
+                                        </div>
+{if $param}
+{foreach name=aussen item=extra_fields from=$param} 
+<div class="mod_info"><b>{$extra_fields.name_value}:</b> {$extra_fields.value}</div>
+{/foreach}
+{/if}
+                                        {if $MODULE_products_media != ''}
+                                        {$MODULE_products_media}
+                                        {/if}
+
+
+
+
+
+                                        &nbsp;</td>
+                                    <td align="center">
+                                 
+                                        {if $PRODUCTS_PRICE_COUNT_P > 0}
+                                           {if $PRODUCTS_PRICE_S_P !=0}
+										 
+                                        Средняя цена <br />
+                                        <div class="product_price_2">
+                                            <div align="center">{$PRODUCTS_PRICE_S}</div>
+                                        </div>
+                                         ({$PRODUCTS_PRICE_COUNT})
+										    {else}
+											  Цены не указаны <br />
+                                    
+                                         ({$PRODUCTS_PRICE_COUNT})
+										{/if}
+                                        {else}
+                                        Нет продавцов<br>
+										{if $PRODUCTS_PRICE_COUNT_ALL > 0}
+										<a href="index.php?main_page=seller_offers_page&products_id={$PRODUCTS_ID}">Найти в других<br> регионах</a>
+										{/if}
+                                        {/if}
+										<br />
+										{if $PRODUCTS_PRICE_COUNT_ALL > 0}
+                                        <!--Кнопка Выбрать продавца -->
+                                        <a class="offers" rel="nofollow" href="index.php?main_page=seller_offers_page&products_id={$PRODUCTS_ID}">
+                                            <img height="19" width="108" vspace="5"  src="/themes/silver/img/price.png">
+                                        </a>
+                                        <!--/Кнопка Выбрать продавца -->
+										{/if}
+                                    </td>
+                                    </tr>
+                                    </tbody>
+                                    </table>
+                                
+    <div class="left_block"> </div>
+    <!--Табы ................................................................................-->
+    <div class="section">
+        <ul class="tabs">
+		    <li class="current">Фото ({$mo_img_count})</li>
+			{if $PRODUCTS_DESCRIPTION}
+            <li >Описание</li>
+			{/if}
+            <li id="prod">Где купить ({$PRODUCTS_PRICE_COUNT_P})</li>
+			{if $PRODUCTS_MO_IMAGES}
+            
+			{/if}
+            <li>Отзывы ({$reviews_count})</li>
+        </ul>
+<!--Таб Фото -->
+		{if  $PRODUCTS_MO_IMAGES}
+        <div class="box visible">     
+            {if $PRODUCTS_MO_IMAGES}
+            <table width="100%" cellspacing="0" cellpadding="7" border="0">
+                <tr>
+                    {foreach name=mo_pic item=img_values from=$mo_img}
+                    {php} $col++;
+                    {/php}
+                    <td valign="top">
+                        <div align="center">
+                            {if $img_values.PRODUCTS_MO_POPUP_LINK !=''}<a href="{$img_values.PRODUCTS_MO_POPUP_IMAGE}" title="{$PRODUCTS_NAME}" onclick="return hs.expand(this, config1)" class="highslide" rel="gallery-plants" target="_blank">{/if}<img src="{$img_values.PRODUCTS_MO_IMAGE}" alt="{$PRODUCTS_NAME}"width="100px"/>{if $img_values.PRODUCTS_MO_POPUP_LINK !=''}</a>{/if}
+                        <br>{$img_values.image_alt}
+						</div>
+                    </td>
+                    {php}
+                    if ($col>=4) {
+                    $col=0;
+                    echo '</tr><tr>';
+                    }
+                    {/php}
+                    {/foreach}
+                </tr>
+            </table>
+            {/if}
+        </div>
+        <!--/Таб Фото -->		
+		
+		{if $PRODUCTS_DESCRIPTION}
+        <!--Таб Описание -->
+        <div class="box ">
+            {if $PRODUCTS_DESCRIPTION !=''}
+            <div class="mod_space">
+
+                <div class="mod_space">
+                    {$PRODUCTS_DESCRIPTION}
+                    <BR/>{if $PRODUCTS_URL != ''}<div class="mod_arturl">{$PRODUCTS_URL}</div>{/if}
+                </div>
+            </div>
+            {/if}
+
+        </div>
+        <!--/Таб Описание --> 
+		{/if}
+
+        <!--Таб Где купить -->
+        <div class="box">{$buy}</div>
+        <!--Таб/ Где купить -->
+		
+{/if}
+        <!--Таб Отзывы -->
+        <div class="box">
+            {if $MODULE_products_reviews != ''}
+            {$MODULE_products_reviews}
+            {/if}
+        </div>
+        <!--/Таб Отзывы -->
+
+    </div> 
+  </div><!-- .section -->
+ <!--/Табы -->
+</div></div></div></div></div></div></div></div> 
+
+
+
+{if $MODULE_cross_selling != ''}
+{$MODULE_cross_selling}
+{/if}
+{if $MODULE_reverse_cross_selling != ''}
+{$MODULE_reverse_cross_selling}
+{/if}
+
+{if $MODULE_also_purchased != ''}
+{$MODULE_also_purchased}
+{/if}
+  
+  
+{$FORM_END}

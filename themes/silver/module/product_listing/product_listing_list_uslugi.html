@@ -1,0 +1,133 @@
+{config_load file="$language/lang.conf" section="index"}
+<table width="100%" cellpadding="0" cellspacing="4" border=0>
+<tr><td class="cat_name str">
+<div class="h1">{$CATEGORIES_NAME}</div>
+</td>
+</td>
+</tr></table>
+
+{if $CATEGORIES_NAME}
+<table width="100%" cellpadding="5" cellspacing="0" border="0" >
+    <tr>
+
+<td align="left" width="190">
+ {$param_filter}
+</td >
+
+ <td align="right" >
+ {$NAVIGATION_PAGES}
+  
+</td >
+    </tr>
+</table>
+
+
+
+{/if}   
+<table width="100%" border="0" cellspacing="0" cellpadding="4" >
+  <tr> 
+
+{foreach name=aussen item=module_data from=$module_content} 
+  {php} $col++; 
+  {/php}
+    <td class="main" valign="top"><div class="t"><div class="b"><div class="l"><div class="r"><div class="bleft"><div class="br"><div class="tl"><div class="tr"> 
+    
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr class="contentBoxContents1" valign="top">
+    <td height="90" class="contentBoxContents1" valign="top">
+      <table width="100%" cellpadding="0" cellspacing="0" border=0><tr>
+        <td valign="top"> 
+  <!-- Фото 120х90 -->
+		<div class="prod-img"><div class="product_name">
+        {if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" title="{$module_data.PRODUCTS_NAME}" /></a>{/if}{if $module_data.PRODUCTS_FSK18=='true'}<br /><img src="{$tpl_path}img/fsk18.gif" alt="" />{/if}
+             </div>
+  <!--/ Фото 120х90 -->
+		
+		</td>                                                  
+    <td width="100%" valign="top">     
+  
+  <!--Название -->
+	<div class="product_name">
+ <a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a>
+    </div>
+  <!--/Название -->
+  
+  <!--Краткое описание -->
+     {if $module_data.PRODUCTS_SHORT_DESCRIPTION}{$module_data.PRODUCTS_SHORT_DESCRIPTION|os_truncate:270}<br />     
+     {/if} 
+  <!--/Краткое описание -->
+      <br />
+  <!--Адрес Телефоны -->
+    {if $module_data.param_address}
+	   <strong>Адрес:</strong>  {$module_data.param_address}<br />
+	{/if}
+	
+    {if $module_data.param_phone}
+	   <strong>Телефоны:</strong>  {$module_data.param_phone}<br />
+	{/if}    
+            
+</div>
+  <!--/Адрес Телефоны -->
+
+  <!--Описание Отзывы -->         
+                          <table width="170" border="0" cellpadding="3" cellspacing="0">
+                            <tr valign="middle">                                     
+                               <td class="main" ><a href="{$module_data.PRODUCTS_LINK}">Подробнее</a> | <a href="reviews.php?products_id={$module_data.PRODUCTS_ID}">Отзывы ({$module_data.reviews_count})</a></td>
+                            </tr>
+                          </table>
+  <!--/Описание Отзывы -->                  
+     
+     </td>
+    
+
+	 </tr>
+    </table>
+   
+</td></div></div></div></div></div></div></div></div> 
+
+
+  </tr>
+</table>    
+   
+ 
+</td>
+  {php} 
+  if ($col>=1) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}  
+
+  </tr>
+  
+<tr>
+<td >
+<table width="100%" cellpadding="0" cellspacing="0" border="0" >
+    <tr>
+<td >
+ <!--Товаров на странице -->
+ <div class="cat-page">
+ Показывать по: <a href="{$LINK_PAGE}10"> 10</a>, <a href="{$LINK_PAGE}20"> 20</a>, <a href="{$LINK_PAGE}50"> 50</a>
+ </div> 
+<!--/Товаров на странице --> 
+
+ <td align="right">
+<!--/Навигация по страницам -->  
+ <div class="cat-page">
+ <span class="s14">{$NAVIGATION} 
+ </div>
+ <!--/Навигация по страницам -->
+ </td >
+    </tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+{if $CATEGORIES_DESCRIPTION}<br /><div class="mod_space">
+{$CATEGORIES_DESCRIPTION}{/if}<br />{if $CATEGORIES_IMAGE}
+<br /></div>
+
+{/if}

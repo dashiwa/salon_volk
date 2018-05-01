@@ -1,0 +1,46 @@
+{config_load file="$language/lang.conf" section="advanced_search"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_adsearch">{#heading_search#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+{$FORM_ACTION}
+{if $error!=''}
+<div class="error">{$error}</div>
+{/if}
+<div class="mod_space">
+<div class="mod_corner" id="myBox">{$FORM_ACTION}
+<table>
+  <tr>
+    <td class="mod_tdb"></td>
+    <td class="mod_tdright"><a href="{$HELP_LINK}">{#text_help#}</a></td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#title_keywords#}</td>
+    <td class="mod_td2">{$INPUT_KEYWORDS}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_categories#}</td>
+    <td class="mod_td2">{$SELECT_CATEGORIES}<br />{$ENTRY_SUBCAT}{#text_subkategories#}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_manufacturer#}</td>
+    <td class="mod_td2">{$SELECT_MANUFACTURERS}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_min#}</td>
+    <td class="mod_td2">{$SELECT_PFROM}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb">{#text_max#}</td>
+    <td class="mod_td2">{$SELECT_PTO}</td>
+  </tr>
+  <tr>
+    <td class="mod_tdb"></td>
+    <td class="mod_td2">{$BUTTON_SUBMIT}</td>
+  </tr>
+</table>
+</div>
+</div>
+{$FORM_END}
+</div>

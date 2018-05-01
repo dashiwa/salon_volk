@@ -1,0 +1,158 @@
+{if $options!=''}
+<div class="mod_space"><div class="mod_corner">
+<table class="mod_table" width="100%" border="1" bordercolor="#dddddd" cellpadding="4" cellspacing="1">
+{foreach name=outer item=options_data from=$options}
+{if $options_data.TYPE eq '1'}
+
+<!-- select -->
+
+  <tr>
+    <th align="left">{$options_data.NAME}:</th>
+  </tr>
+  <tr>
+    <td align="left">
+        <select name="id[{$options_data.ID}]">
+        {foreach key=key_data item=item_data from=$options_data.DATA}
+                <option value="{$item_data.ID}">{$item_data.TEXT} {if $item_data.PRICE !='' }   ({$item_data.PREFIX} {$item_data.PRICE})   {/if} </option>
+        {/foreach}
+        </select>
+    </td>
+  </tr>
+<!-- /select -->
+
+{elseif $options_data.TYPE eq '2'}
+
+<!-- text -->
+    <tr>
+      <th>{$options_data.NAME}:</th>
+    </tr>
+    <tr>
+    <td width="100%">
+    {foreach name=aussen key=key_data item=item_data from=$options_data.DATA}
+     <table width="100%" border="0" cellpadding="1" cellspacing="1">
+      <tr>
+        <td align="left"><input name="id[{$options_data.ID}]" type="hidden" value="{$item_data.ID}" /><input name="id[txt_{$options_data.ID}_{$item_data.ID}]" type="text" size="{$options_data.SIZE}" maxlength="{$options_data.LENGTH}" /></td>
+        <td align="left">{$item_data.TEXT}</td>
+        <td align="right">{if $item_data.MODEL}({$item_data.MODEL}){/if} {$item_data.PREFIX}{$item_data.PRICE}</td>
+      </tr>
+      {if $item_data.DESCRIPTION}<tr>
+        <td align="left" colspan="3">{$item_data.DESCRIPTION}</td>
+      </tr>{/if}
+    </table>
+    {/foreach}
+    </td>
+    </tr>
+<!-- /text -->
+
+{elseif $options_data.TYPE eq '3'}
+
+<!-- textarea -->
+    <tr>
+      <th>{$options_data.NAME}:</th>
+    </tr>
+    <tr>
+    <td width="100%">
+    {foreach name=aussen key=key_data item=item_data from=$options_data.DATA}
+     <table width="100%" border="0" cellpadding="1" cellspacing="1">
+      <tr>
+        <td align="left"><input name="id[{$options_data.ID}]" type="hidden" value="{$item_data.ID}" /><textarea name="id[txt_{$options_data.ID}_{$item_data.ID}]" cols="20" rows="{$options_data.ROWS}"></textarea></td>
+        <td align="left">{$item_data.TEXT}</td>
+        <td align="right">{if $item_data.MODEL}({$item_data.MODEL}){/if} {$item_data.PREFIX}{$item_data.PRICE}</td>
+      </tr>
+      {if $item_data.DESCRIPTION}<tr>
+        <td align="left" colspan="3">{$item_data.DESCRIPTION}</td>
+      </tr>{/if}
+    </table>
+    {/foreach}
+    </td>
+    </tr>
+<!-- /textarea -->
+
+{elseif $options_data.TYPE eq '4'}
+
+<!-- radio -->
+    <tr>
+      <th>{$options_data.NAME}:</th>
+    </tr>
+    <tr>
+    <td width="100%">
+    {foreach name=aussen key=key_data item=item_data from=$options_data.DATA}
+     <table width="100%" border="0" cellpadding="1" cellspacing="1">
+      <tr>
+        <td width="1"><input type="radio" name="id[{$options_data.ID}]" value="{$item_data.ID}" {if $smarty.foreach.aussen.first} checked="checked"{/if} /></td>
+        <td width="1" valign="top">{if $item_data.IMAGE}<img src="{$image_dir}/thumbs/{$item_data.IMAGE}" width="45" height="45" alt="" style="border: 1px solid #000000"  />{/if}</td>
+        <td align="left">
+        {if $item_data.LINK}
+        <a align="right" href="http://{$item_data.LINK}" target="_blank">
+        {$item_data.TEXT}</a>
+        {else}{$item_data.TEXT}
+        {/if}</td>
+        <td align="left">{$item_data.SHORT_DESCRIPTION}</td>
+        <td align="right">{if $item_data.PRICE}{$item_data.PREFIX}{$item_data.PRICE}{/if}</td>
+      </tr>
+    </table>
+    {/foreach}
+    </td>
+    </tr>
+
+<!-- /radio -->
+
+{elseif $options_data.TYPE eq '5'}
+
+<!-- checkbox -->
+
+    <tr>
+      <th>{$options_data.NAME}:</th>
+    </tr>
+    <tr>
+    <td width="100%">
+    {foreach name=aussen key=key_data item=item_data from=$options_data.DATA}
+     <table width="100%" border="0" cellpadding="1" cellspacing="1">
+      <tr>
+        <td width="1"><input type="checkbox" name="id[{$options_data.ID}]" value="{$item_data.ID}" /></td>
+        <td width="1" valign="top">{if $item_data.IMAGE}<img src="{$image_dir}/thumbs/{$item_data.IMAGE}" width="45" height="45" alt="" style="border: 1px solid #000000"  />{/if}</td>
+        <td align="left">
+        {if $item_data.LINK}
+        <a align="right" href="http://{$item_data.LINK}" target="_blank">
+        {$item_data.TEXT}</a>
+        {else}{$item_data.TEXT}
+        {/if}</td>
+        <td align="left">{$item_data.SHORT_DESCRIPTION}</td>
+        <td align="right">{if $item_data.PRICE}{$item_data.PREFIX}{$item_data.PRICE}{/if}</td>
+      </tr>
+    </table>
+    {/foreach}
+    </td>
+    </tr>
+
+<!-- /checkbox -->
+
+{elseif $options_data.TYPE eq '6'}
+
+<!-- readonly -->
+    <tr>
+      <th>{$options_data.NAME}:</th>
+    </tr>
+    <tr>
+    <td width="100%">
+    {foreach key=key_data item=item_data from=$options_data.DATA}
+     <table width="100%" border="0" cellpadding="1" cellspacing="1">
+      <tr>
+        <td width="1">
+        <input type="hidden" name="id[{$options_data.ID}]" value="{$item_data.ID}" /></td>
+        <td valign="top">{if $item_data.MODEL}({$item_data.MODEL}){/if}</td>
+        </tr><tr>
+        <td align="left" colspan="2">{if $item_data.DESCRIPTION}{$item_data.DESCRIPTION}{/if}</td>
+        </tr><tr>
+        <td align="right" colspan="2">{if $item_data.PRICE}{$item_data.PREFIX}{$item_data.PRICE}{/if}</td>
+      </tr>
+    </table>
+    {/foreach}
+    </td>
+    </tr>
+<!-- /readonly -->
+
+{/if}
+{/foreach}
+</table></div></div>
+{/if}

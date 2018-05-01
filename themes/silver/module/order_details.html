@@ -1,0 +1,42 @@
+{config_load file="$language/lang.conf" section="shopping_cart"}
+{config_load file="$language/lang.conf" section="product_info"}
+
+<table class="mod_table" bordercolor="#dddddd" border="1" width="100%" cellspacing="1" cellpadding="4">
+  <tr> 
+    <td width="1"></td>
+    <td width="1"><b></b></td>
+    <td align="center"><b>{#text_article#}</b></td>
+    <td align="right"><b>{#text_single#}</b></td>
+    <td align="right"><b>{#text_total#}</b></td>
+    <td width="1"><b>{#text_remove#}</b></td>
+  </tr>
+  {foreach name=aussen item=module_data from=$module_content} 
+  <tr>
+    <td>{if $module_data.PRODUCTS_IMAGE!=''}<img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.IMAGE_ALT}" />{/if}</td>
+    <td align="center">{$module_data.PRODUCTS_QTY}</td>
+    <td align="left" valign="top"><a href="{$module_data.PRODUCTS_LINK}"><b>{$module_data.PRODUCTS_NAME}</b></a><br />
+      {if $module_data.PRODUCTS_SHIPPING_TIME neq ""}{#text_shippingtime#}&nbsp;{$module_data.PRODUCTS_SHIPPING_TIME}{/if}
+      {if $module_data.ATTRIBUTES!=''} 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        {foreach key=key_data item=item_data from=$module_data.ATTRIBUTES} 
+        <tr> 
+          <td>{$item_data.NAME}:</td>
+          <td>{$item_data.VALUE_NAME}</td>
+        </tr>
+        {/foreach}
+      </table>
+      {else}
+      {/if} </td>
+    <td align="right">{$module_data.PRODUCTS_SINGLE_PRICE}</td>
+    <td align="right">{$module_data.PRODUCTS_PRICE}</td>
+    <td align="center">{$module_data.BOX_DELETE}</td>
+  </tr>
+  {/foreach} 
+  <tr> 
+    <td colspan="6"></td>
+  </tr>
+  <tr>
+    <td colspan="5"><div align="right">{$UST_CONTENT}<b>{$TOTAL_CONTENT}</b>{if $SHIPPING_INFO}{$SHIPPING_INFO}{/if}</div></td>
+    <td></td>
+  </tr>
+</table>

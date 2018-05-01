@@ -1,0 +1,29 @@
+{config_load file="$language/lang.conf" section="reverse_cross_selling"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_feat">{#heading_text#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+     <table width="100%" cellspacing="0" cellpadding="2">
+      <tr>
+{foreach name=aussen item=module_data from=$module_content}
+  {php} $col++;
+  {/php}
+<td class="mod_cel">
+<div class="mod_corner" id="myBox">
+<div class="product_name"><a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></div>
+<div class="product_image">{if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" border="0" alt="{$module_data.PRODUCTS_NAME}" /></a>{/if}</div>
+<div class="product_price">{$module_data.PRODUCTS_PRICE}</div>
+</div>
+</td>
+  {php}
+
+  if ($col>=3) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+{/foreach}
+      </tr>
+    </table>
+</div>

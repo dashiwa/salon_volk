@@ -1,0 +1,29 @@
+{php}if (substr(basename($_SERVER['REDIRECT_URL']), 0, 9)=='index.php'  && empty($_SERVER['QUERY_STRING'])){ {/php}
+				<div class="content-block">
+					<div class="ctc"><div class="ctl"></div><div class="ctr"></div></div>
+					<div class="content-block-content">
+						<h2 class="default-title upp bold">{$category_list_title}</h2>
+
+						<div class="main-category">
+							{foreach name=aussen item=box_content from=$box_content}
+							{php} $col++; {/php} 
+							<div class="main-category-item left center">
+								<a href="{$box_content.CATEGORY_LINK}" title="{$box_content.CATEGORY_DESCRIPTION}">
+									
+{if $box_content.CATEGORY_IMAGE}<img src="{$box_content.CATEGORY_IMAGE}" alt="{$box_content.CATEGORY_NAME}"><br />{/if}
+									<strong>{$box_content.CATEGORY_NAME}</strong>
+								</a>
+							</div>
+							{php} 
+							if ($col>=3) { 
+								$col=0; 
+								echo '<div class="clear"></div>';
+							} 
+							{/php} 
+							{/foreach}
+						<div class="clear"></div>
+						</div>
+					</div>
+					<div class="cbc"><div class="cbl"></div><div class="cbr"></div></div>
+				</div>
+{php}}{/php}

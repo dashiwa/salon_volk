@@ -1,0 +1,55 @@
+{config_load file="$language/lang.conf" section="index"}
+{config_load file="$language/lang.conf" section="boxes"}
+<p><h1 class="cat_name str">{$CATEGORIES_NAME}</h1>
+</p>
+{if $CATEGORIES_NAME}
+
+{/if}
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+  {foreach name=aussen item=module_data from=$module_content}
+  {php} $col++;
+  {/php}
+<td class="mod_cel5">
+ 
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  
+  <tr>
+    <td height="220" class="product_image">
+      <div align="center"></div>
+      {if $module_data.PRODUCTS_IMAGE}<a href="{$module_data.PRODUCTS_LINK}"><img src="{$module_data.PRODUCTS_IMAGE}" alt="{$module_data.PRODUCTS_NAME}" title="{$module_data.PRODUCTS_NAME}" /></a>{/if}</td>
+    
+  </tr>
+   <tr>
+    <td class="product_name center" colspan="2" height="40"><a href="{$module_data.PRODUCTS_LINK}">{$module_data.PRODUCTS_NAME}</a></td>
+  </tr>
+</table>
+</div>
+ 
+
+
+</td>
+  {php}
+  if ($col>=3) {
+  $col=0;
+  echo '</tr><tr>';
+  }
+  {/php}
+  {/foreach}
+    </tr>
+  </table>
+{if $CATEGORIES_DESCRIPTION}
+<div class="mod_space">
+
+  <table width="100%" border="0">
+  <tr>
+    <td>{if $CATEGORIES_IMAGE}{/if}
+{$CATEGORIES_DESCRIPTION} </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</div></div></div>
+{/if}
+
+

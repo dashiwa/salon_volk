@@ -1,0 +1,27 @@
+{config_load file="$language/lang.conf" section="reviews"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_redleft"></td><td class="mod_redcenter">
+<div class="modtit_rew">{#heading_reviews#} {$PRODUCTS_NAME}</div>
+</td><td class="mod_redright"></td></tr></table>
+<div class="mod_space">
+ <div class="mod_corner">
+<table class="mod_table" width="100%" border="1" bordercolor="#dddddd" cellpadding="4" cellspacing="1">
+  <tr> 
+    <td width="1">{#title_nr#}</td>
+    <td><div class="mod_artautor">{#title_author#}</div></td>
+    <td><div class="mod_info">{#title_rating#}</div></td>
+    <td><div class="mod_time">{#title_date#}</div></td>
+  </tr>
+  {foreach name=aussen item=module_data from=$module_content} 
+  <tr> 
+    <td>{$module_data.ID}</td>
+    <td>{$module_data.AUTHOR}</td>
+    <td>{$module_data.RATING}</td>
+    <td>{$module_data.DATE}</td>
+  </tr>
+  {/foreach} 
+</table>
+ </div>
+</div>
+</div>

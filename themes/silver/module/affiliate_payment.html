@@ -1,0 +1,34 @@
+{config_load file="$language/affiliate.conf" section="affiliate_payment"}
+<div class="mod_news">
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr><td class="mod_blueleft"></td><td class="mod_bluecenter">
+<div class="modtit_affil">{#heading_title#}</div>
+</td><td class="mod_blueright"></td></tr></table>
+
+<div class="info">{$affiliate_payment_split_number}</div>
+<div class="mod_space">
+    <table class="mod_table" bordercolor="#dddddd" border="1" width="100%" cellspacing="1" cellpadding="4">
+      <tr>
+        <td align="right">{#table_heading_payment_id#}</td>
+        <td align="center">{#table_heading_date#}</td>
+        <td align="right">{#table_heading_payment#}</td>
+        <td align="right">{#table_heading_status#}</td>
+      </tr>
+      {if $affiliate_payment_table neq ''}
+        {$affiliate_payment_table}
+      {else}
+        <tr><td colspan="4"><div class="info">{#text_no_payments#}</div></td></tr>
+      {/if}
+      <tr>
+        <td colspan="4"><table border="0" width="100%" cellspacing="0" cellpadding="0">
+		  <tr>
+	        <td>{$affiliate_payment_split_count}</td>
+	        <td>{$affiliate_payment_links}</td>
+	      </tr>
+	    </table></td>
+	  </tr>
+	  <tr>
+        <td colspan="4">{#text_information_payment_total#}&nbsp;&nbsp;{$affiliate_payment_total}</td>
+      </tr>
+    </table>
+</div></div>

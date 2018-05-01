@@ -1,0 +1,139 @@
+Array
+(
+    [tracking] => Array
+        (
+            [http_referer] => Array
+                (
+                    [path] => 
+                )
+
+            [ip] => 127.0.0.1
+            [date] => 2011-09-18 20:09:07
+            [browser] => Mozilla/5.0 (Windows NT 5.1; rv:6.0.2) Gecko/20100101 Firefox/6.0.2
+            [pageview_history] => Array
+                (
+                    [0] => Array
+                        (
+                            [scheme] => http
+                            [host] => shopos
+                            [path] => /
+                        )
+
+                    [1] => Array
+                        (
+                            [scheme] => http
+                            [host] => shopos
+                            [path] => /login.php
+                        )
+
+                    [2] => Array
+                        (
+                            [scheme] => http
+                            [host] => shopos
+                            [path] => /login.php
+                            [query] => action=process
+                        )
+
+                    [3] => Array
+                        (
+                            [scheme] => http
+                            [host] => shopos
+                            [path] => /login.php
+                            [query] => action=process
+                        )
+
+                )
+
+        )
+
+    [tracked] => 1
+    [language] => ru
+    [languages_id] => 1
+    [language_charset] => utf-8
+    [language_code] => ru
+    [currency] => RUR
+    [customers_status] => Array
+        (
+            [customers_status_id] => 0
+            [customers_status_name] => Админ
+            [customers_status_image] => admin_status.gif
+            [customers_status_public] => 1
+            [customers_status_min_order] => 
+            [customers_status_max_order] => 
+            [customers_status_discount] => 0.00
+            [customers_status_ot_discount_flag] => 1
+            [customers_status_ot_discount] => 0.00
+            [customers_status_graduated_prices] => 1
+            [customers_status_show_price] => 1
+            [customers_status_show_price_tax] => 1
+            [customers_status_add_tax_ot] => 0
+            [customers_status_payment_unallowed] => 
+            [customers_status_shipping_unallowed] => 
+            [customers_status_discount_attributes] => 0
+            [customers_fsk18] => 1
+            [customers_fsk18_display] => 1
+            [customers_status_write_reviews] => 1
+            [customers_status_read_reviews] => 1
+        )
+
+    [cart] => shoppingCart Object
+        (
+            [contents] => Array
+                (
+                )
+
+            [total] => 0
+            [weight] => 0
+            [cartID] => 
+            [content_type] => 
+        )
+
+    [account_type] => 0
+    [zone_id] => 0
+    [param] => 
+    [customer_gender] => 
+    [customer_first_name] => Ваше имя
+    [customer_last_name] => Ваше фамилия
+    [customer_id] => 1
+    [customer_vat_id] => 
+    [customer_default_address_id] => 1
+    [customer_country_id] => 176
+    [customer_zone_id] => 98
+    [actual_content] => Array
+        (
+            [] => Array
+                (
+                    [qty] => 0
+                )
+
+        )
+
+    [language_admin] => ru
+    [user_info] => Array
+        (
+            [user_ip] => 127.0.0.1
+            [user_host] => localhost
+        )
+
+    [selected_box] => configuration
+)
+Array
+(
+    [Filename] => 12917401788.jpg
+    [PHPSESSID] => ef70772e6cea7e97d2fdaceb40f2abf2
+    [lkey] => 1089173
+    [products_id] => 214
+    [Upload] => Submit Query
+)
+Array
+(
+    [Filedata] => Array
+        (
+            [name] => 12917401788.jpg
+            [type] => application/octet-stream
+            [tmp_name] => W:\tmp\php62CD.tmp
+            [error] => 0
+            [size] => 13173
+        )
+
+)

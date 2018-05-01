@@ -1,0 +1,27 @@
+{config_load file="$language/affiliate.conf" section="affiliate_$help_file"}
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html {$HTML_PARAMS}>
+<head>
+<base href="{$HREF}">
+<title>{$TITLE}</title>
+<link rel="stylesheet" type="text/css" href="{$tpl_path}style.css">
+</head>
+
+<body>
+<div class="cont_tab">
+  <div class="cont_row">
+    <div class="cont_tl"></div><div class="cont_tc"></div><div class="cont_tr"></div>
+  </div>
+  <div class="cont_row">
+    <div class="cont_cl"></div><div class="cont_cc">
+    <div class="h2">{#heading_summary_help#}</div>
+    <div class="info">{#text_topic_help#}</div>
+    <div align="right"><a class="a_more" href="javascript:window.close()">{#text_close_window#}</a></div>
+    </div><div class="cont_cr"></div>
+  </div>
+  <div class="cont_row">
+    <div class="cont_bl"></div><div class="cont_bc"></div><div class="cont_br"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?php $_config_vars = array (
+  'title' => 'Номер заказа:',
+  'payment' => 'Способ оплаты:',
+  'shipping' => 'Способ доставки:',
+  'order' => 'Номер заказа:',
+  'phone' => 'Телефон:',
+  'email' => 'Email:',
+  'date' => 'Дата:',
+  'payment_address' => 'Адрес покупателя:',
+  'shipping_address' => 'Адрес доставки:',
+  'heading_products' => 'Товары:',
+  'head_units' => 'Количество',
+  'head_products' => 'Товары:',
+  'head_artnr' => 'Код товара',
+  'head_price' => 'Стоимость',
+  'head_single_price' => 'Цена за единицу',
+); ?>

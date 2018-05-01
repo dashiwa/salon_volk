@@ -1,0 +1,116 @@
+{config_load file="$language/lang.conf" section="product_info"}
+
+<script type="text/javascript" src="themes/grin/javascript/highslide/highslide-with-gallery.js"></script>
+<script type="text/javascript" src="themes/grin/javascript/highslide/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="themes/grin/javascript/highslide/highslide.css" />
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" href="themes/grin/javascript/highslide/highslide-ie6.css" />
+<![endif]-->
+{$FORM_ACTION}
+<div class="mod_news">
+
+   <table width="100%" cellpadding="5" cellspacing="0" border="0">
+        <tr><td>
+                <!-- Название товара -->
+                <div class="cat_name">{$PRODUCTS_NAME}</div>
+                <!--/Название товара -->
+            <td align="right">
+                <!-- Навигатор -->
+              {$PRODUCT_NAVIGATOR} 
+                <!--/Навигатор -->
+            </td>			
+			</td></tr></table>
+    
+	<!-- Шапка товара -->    
+	
+        
+                                      
+                                
+    <div class="left_block"> </div>
+    <!--Табы ................................................................................-->
+   
+<!--Таб Фото -->
+	<table border="0" cellpadding="0" cellspacing="0" style="width: 200;">
+                                        <tbody>
+                                        <tr>
+                                        <td width="200">
+                                            <!-- Фото -->
+                                            <div class="product_image">
+                                                {if $PRODUCTS_IMAGE or $PRODUCTS_MO_IMAGES or $PRODUCTS_IMAGE_LINK!=''}
+                                                {if $PRODUCTS_POPUP_LINK!=''}<a id="thumb1" href="{$PRODUCTS_POPUP_IMAGE}" onclick="return hs.expand(this, config1)" class="highslide" title="{$PRODUCTS_NAME}" {if $PRODUCTS_MO_IMAGES}rel="gallery-plants"{/if} target="_blank">{/if}<img src="{$PRODUCTS_IMAGE}" alt="{$PRODUCTS_NAME}" />{if $PRODUCTS_POPUP_LINK!=''}</a>{/if}
+                                                <br>{if  $img_values.image_alt}
+    //какой то код с выводом комментария или просто метка
+     {$img_values.image_alt} 
+{else}
+   //нет комментария к картинке 
+{/if}
+												{/if}
+                                            </div>     
+                                            <!--/Фото -->
+                                        </td>         			
+                                 
+                                    </tr>
+                                    </tbody>
+                                    </table>    
+	{if  $PRODUCTS_MO_IMAGES}
+        <div class="box visible">     
+            {if $PRODUCTS_MO_IMAGES}
+            <table width="100%" cellspacing="0" cellpadding="7" border="0">
+                <tr>
+                    {foreach name=mo_pic item=img_values from=$mo_img}
+                    {php} $col++;
+                    {/php}
+                    <td valign="top">
+                        <div align="center">
+                                                                   
+							{if $img_values.PRODUCTS_MO_POPUP_LINK !=''}<a href="{$img_values.PRODUCTS_MO_POPUP_IMAGE}" title="{$PRODUCTS_NAME}" onclick="return hs.expand(this, config1)" class="highslide" rel="gallery-plants" target="_blank">{/if}<img src="{$img_values.PRODUCTS_MO_IMAGE}" alt="{$PRODUCTS_NAME}" />{if $img_values.PRODUCTS_MO_POPUP_LINK !=''}</a>{/if}
+                        <br>{$img_values.image_alt}
+						</div>
+                    </td>
+                    {php}
+                    if ($col>=2) {
+                    $col=0;
+                    echo '</tr><tr>';
+                    }
+                    {/php}
+                    {/foreach}
+                </tr>
+            </table>
+            {/if}
+        </div>
+        <!--/Таб Фото -->		
+		
+		{if $PRODUCTS_DESCRIPTION}
+        <!--Таб Описание -->
+        <div class="box ">
+            {if $PRODUCTS_DESCRIPTION !=''}
+            <div class="mod_space">
+
+                <div class="mod_space">
+                    {$PRODUCTS_DESCRIPTION}
+                    <BR/>{if $PRODUCTS_URL != ''}<div class="mod_arturl">{$PRODUCTS_URL}</div>{/if}
+                </div>
+            </div>
+            {/if}
+
+        </div>
+        <!--/Таб Описание --> 
+		{/if}
+
+        <!--Таб Где купить -->
+        <div class="box">{$buy}</div>
+        <!--Таб/ Где купить -->
+		
+{/if}
+        <!--Таб Отзывы -->
+      
+        <!--/Таб Отзывы -->
+
+
+  </div><!-- .section -->
+ <!--/Табы -->
+
+</div> 
+
+  
+{$FORM_END}

@@ -1,0 +1,39 @@
+{config_load file="$language/lang.conf" section="ask_a_question"}
+<div class="cont_tab">
+  <div class="cont_row">
+    <div class="cont_tl"></div><div class="cont_tc"></div><div class="cont_tr"></div>
+  </div>
+  <div class="cont_row">
+    <div class="cont_cl"></div><div class="cont_cc">
+    <div class="h2">{#title_question#}</div>
+
+<div class="mod_space">
+<div class="mod_moreinfo">
+      <div class="mod_arttitlist">{#heading_title#}</div>
+      <div class="mod_info">{#model#}&nbsp;{$PRODUCTS_MODEL}</div>
+      <div class="mod_info">{#name#}&nbsp;{$PRODUCTS_NAME}</div>
+</div>
+{if $error!=''}
+<div class="error">{$error}</div>
+{/if}
+<br />
+{$FORM_ACTION}
+<div class="mod_corner">
+ <div class="cont_tab">
+   <div class="mod_row"><div class="mod_tdb">{#text_sec_code#}</div><div class="mod_td2">{$CAPTCHA_IMG}<br /><font size="1" color="#0B3168">{#text_ask_a_question_help#}</font></div></div>
+   <div class="mod_row"><div class="mod_tdb">{#text_inp_code#}</div><div class="mod_td2">{$CAPTCHA_INPUT}</div></div>
+   <div class="mod_row"><div class="mod_tdb">{#text_firstname#}</div><div class="mod_td2">{$INPUT_FIRSTNAME}</div></div>
+   <div class="mod_row"><div class="mod_tdb">{#text_lastname#}</div><div class="mod_td2">{$INPUT_LASTNAME}</div></div>
+   <div class="mod_row"><div class="mod_tdb">{#text_email#}</div><div class="mod_td2">{$INPUT_EMAIL}</div></div>
+   <div class="mod_row"><div class="mod_tdb">{#text_message#}</div><div class="mod_td2">{$INPUT_TEXT}</div></div>
+   <div class="mod_row"><div class="mod_td1"><span class="imgs">{$BUTTON_CONTINUE}</span></div><div class="mod_td2"><span class="right">{$BUTTON_SUBMIT}</span></div>
+</div></div>
+</div>
+{$FORM_END}
+</div>
+    </div><div class="cont_cr"></div>
+  </div>
+  <div class="cont_row">
+    <div class="cont_bl"></div><div class="cont_bc"></div><div class="cont_br"></div>
+  </div>
+</div>
